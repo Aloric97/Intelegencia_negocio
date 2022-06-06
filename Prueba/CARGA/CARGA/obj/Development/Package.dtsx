@@ -1,0 +1,1933 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/2/2022 12:07:21 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LEANDRO"
+  DTS:CreatorName="LEANDRO\leand"
+  DTS:DTSID="{B25B266B-8297-4577-876C-2E3BE012019F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="11274"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{8A7EAD5D-E5E6-4FA1-9105-BF17C7FC397C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Conexion_archivos_planos]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{0E9E23D0-6AF6-4B0E-93F4-6CC15A545B50}"
+      DTS:ObjectName="Conexion_archivos_planos">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="11274"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Inteligencia de negocios\bi-persona-ccliente.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id_persona"
+              DTS:DTSID="{A9F8D5CD-120E-4771-A5CF-54C44B27D183}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id_cliente"
+              DTS:DTSID="{041533CB-07F3-426F-ACAB-94AAEACD8F5F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="apellido_persona"
+              DTS:DTSID="{AC2838B2-66FA-4011-904B-B6B05906B966}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nombre_persona"
+              DTS:DTSID="{2EDCBCA6-79CB-4921-B806-02D6FEFEE7CE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="40"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="email_persona"
+              DTS:DTSID="{8DD807AA-2FF8-4420-9274-46638F17809B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="actividad_persona"
+              DTS:DTSID="{8B2C72A9-6708-490E-BDEF-52AE9DF3BC19}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="sexo_persona"
+              DTS:DTSID="{20EB80F1-FE09-404E-A589-CC24A1E87CF6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="35"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="fecha_nacimiento_persona"
+              DTS:DTSID="{BB307DD0-B3CD-4CE6-9D11-CEDAE2223C5D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nro_cuenta_cliente_persona"
+              DTS:DTSID="{1DEADA2B-156A-44AB-8304-1270D6AB910D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="sector_economico"
+              DTS:DTSID="{82A786AC-BD32-4E56-A39B-F88D87C38168}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="condicioniva_persona"
+              DTS:DTSID="{3256E3B1-18C9-452E-AF79-B0B2504B1EF8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="tipo_persona"
+              DTS:DTSID="{17416A77-C145-4964-B194-BB70225BE8C9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="segmento_persona"
+              DTS:DTSID="{FEE1CE39-B48F-45CB-811B-FD1AE79AC997}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="tipo_documento_persona"
+              DTS:DTSID="{671180DF-EB3D-411C-A19E-C7B16D5A8C89}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="8"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nro_documento_persona"
+              DTS:DTSID="{4F5E30F5-7F5C-4595-9740-0CE33E663B07}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cuit_persona"
+              DTS:DTSID="{F530FE30-1FF9-4831-8DA2-DBC776F3B68A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="telefono_persona"
+              DTS:DTSID="{E5EDB8DF-98FE-444C-B56F-03F4C36D6006}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="40"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cuenta_cobro"
+              DTS:DTSID="{44114B8F-F6D3-4E0A-B636-EC3E1A11C0B3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="situacion_mora_banco"
+              DTS:DTSID="{8E06F3D8-B76C-478D-8C48-55535C926616}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="situacion_mora_sf"
+              DTS:DTSID="{0E21757D-F025-48ED-9007-63BC7A90232C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="sucursal"
+              DTS:DTSID="{E379D970-8C32-4101-B71E-30157573A5E5}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LEANDRO\LEANDRO.BancoV2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F3A8A764-0C3B-4095-A0CA-5410E2A824FC}"
+      DTS:ObjectName="LEANDRO\LEANDRO.BancoV2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LEANDRO\LEANDRO;Initial Catalog=BancoV2;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Insertar_registros"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{96BEA5B7-0990-4777-9113-20B758456B2F}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insertar_registros"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Insertar_registros\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="11274"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insertar_registros\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Conexion_archivos_planos]"
+                  connectionManagerRefId="Package.ConnectionManagers[Conexion_archivos_planos]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[apellido_persona]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[apellido_persona]"
+                      length="255"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[apellido_persona]"
+                      name="apellido_persona"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[nombre_persona]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[nombre_persona]"
+                      length="255"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[nombre_persona]"
+                      name="nombre_persona"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[email_persona]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[email_persona]"
+                      length="40"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[email_persona]"
+                      name="email_persona"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[actividad_persona]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[actividad_persona]"
+                      length="50"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[actividad_persona]"
+                      name="actividad_persona"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[sexo_persona]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[sexo_persona]"
+                      length="15"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[sexo_persona]"
+                      name="sexo_persona"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[fecha_nacimiento_persona]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[fecha_nacimiento_persona]"
+                      length="35"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[fecha_nacimiento_persona]"
+                      name="fecha_nacimiento_persona"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[nro_cuenta_cliente_persona]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[nro_cuenta_cliente_persona]"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[nro_cuenta_cliente_persona]"
+                      name="nro_cuenta_cliente_persona"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[sector_economico]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[sector_economico]"
+                      length="20"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[sector_economico]"
+                      name="sector_economico"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[condicioniva_persona]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[condicioniva_persona]"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[condicioniva_persona]"
+                      name="condicioniva_persona"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[tipo_persona]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[tipo_persona]"
+                      length="1"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[tipo_persona]"
+                      name="tipo_persona"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[segmento_persona]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[segmento_persona]"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[segmento_persona]"
+                      name="segmento_persona"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[tipo_documento_persona]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[tipo_documento_persona]"
+                      length="10"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[tipo_documento_persona]"
+                      name="tipo_documento_persona"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[nro_documento_persona]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[nro_documento_persona]"
+                      length="8"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[nro_documento_persona]"
+                      name="nro_documento_persona"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[cuit_persona]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[cuit_persona]"
+                      length="15"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[cuit_persona]"
+                      name="cuit_persona"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[telefono_persona]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[telefono_persona]"
+                      length="10"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[telefono_persona]"
+                      name="telefono_persona"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[cuenta_cobro]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[cuenta_cobro]"
+                      length="40"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[cuenta_cobro]"
+                      name="cuenta_cobro"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[situacion_mora_banco]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[situacion_mora_banco]"
+                      length="50"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[situacion_mora_banco]"
+                      name="situacion_mora_banco"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[situacion_mora_sf]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[situacion_mora_sf]"
+                      length="50"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[situacion_mora_sf]"
+                      name="situacion_mora_sf"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[id_persona]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[id_persona]"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[id_persona]"
+                      name="id_persona"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[id_persona]"
+                      dataType="i4"
+                      name="id_persona" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[id_cliente]"
+                      dataType="i4"
+                      name="id_cliente" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[apellido_persona]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="apellido_persona" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[nombre_persona]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="nombre_persona" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[email_persona]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="email_persona" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[actividad_persona]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="actividad_persona" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[sexo_persona]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="sexo_persona" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[fecha_nacimiento_persona]"
+                      codePage="1252"
+                      dataType="str"
+                      length="35"
+                      name="fecha_nacimiento_persona" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[nro_cuenta_cliente_persona]"
+                      dataType="i8"
+                      name="nro_cuenta_cliente_persona" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[sector_economico]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="sector_economico" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[condicioniva_persona]"
+                      dataType="i4"
+                      name="condicioniva_persona" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[tipo_persona]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="tipo_persona" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[segmento_persona]"
+                      dataType="i4"
+                      name="segmento_persona" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[tipo_documento_persona]"
+                      dataType="wstr"
+                      length="10"
+                      name="tipo_documento_persona" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[nro_documento_persona]"
+                      dataType="wstr"
+                      length="8"
+                      name="nro_documento_persona" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[cuit_persona]"
+                      dataType="wstr"
+                      length="15"
+                      name="cuit_persona" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[telefono_persona]"
+                      dataType="wstr"
+                      length="10"
+                      name="telefono_persona" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[cuenta_cobro]"
+                      dataType="wstr"
+                      length="40"
+                      name="cuenta_cobro" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[situacion_mora_banco]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="situacion_mora_banco" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[situacion_mora_sf]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="situacion_mora_sf" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[sucursal]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="sucursal" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insertar_registros\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Dim_Cliente]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insertar_registros\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LEANDRO\LEANDRO.BancoV2]"
+                  connectionManagerRefId="Package.ConnectionManagers[LEANDRO\LEANDRO.BancoV2]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[actividad_persona]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="actividad_persona"
+                      externalMetadataColumnId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Actividad]"
+                      lineageId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[actividad_persona]" />
+                    <inputColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[apellido_persona]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="apellido_persona"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Apellido]"
+                      lineageId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[apellido_persona]" />
+                    <inputColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[nombre_persona]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="nombre_persona"
+                      cachedSortKeyPosition="2"
+                      externalMetadataColumnId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Nombre]"
+                      lineageId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[nombre_persona]" />
+                    <inputColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[email_persona]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="email_persona"
+                      cachedSortKeyPosition="3"
+                      externalMetadataColumnId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Email]"
+                      lineageId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[email_persona]" />
+                    <inputColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[sexo_persona]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="sexo_persona"
+                      externalMetadataColumnId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Sexo]"
+                      lineageId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[sexo_persona]" />
+                    <inputColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[fecha_nacimiento_persona]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="35"
+                      cachedName="fecha_nacimiento_persona"
+                      externalMetadataColumnId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FechaNacimiento]"
+                      lineageId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[fecha_nacimiento_persona]" />
+                    <inputColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[nro_cuenta_cliente_persona]"
+                      cachedDataType="i8"
+                      cachedName="nro_cuenta_cliente_persona"
+                      externalMetadataColumnId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NroCuentaCliente]"
+                      lineageId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[nro_cuenta_cliente_persona]" />
+                    <inputColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[sector_economico]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="sector_economico"
+                      externalMetadataColumnId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SectorEconomico]"
+                      lineageId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[sector_economico]" />
+                    <inputColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[condicioniva_persona]"
+                      cachedDataType="i4"
+                      cachedName="condicioniva_persona"
+                      externalMetadataColumnId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CondicionIVA]"
+                      lineageId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[condicioniva_persona]" />
+                    <inputColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[tipo_persona]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="tipo_persona"
+                      externalMetadataColumnId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tipo]"
+                      lineageId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[tipo_persona]" />
+                    <inputColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[segmento_persona]"
+                      cachedDataType="i4"
+                      cachedName="segmento_persona"
+                      externalMetadataColumnId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Segmento]"
+                      lineageId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[segmento_persona]" />
+                    <inputColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[tipo_documento_persona]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="tipo_documento_persona"
+                      externalMetadataColumnId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TipoDocumento]"
+                      lineageId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[tipo_documento_persona]" />
+                    <inputColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[nro_documento_persona]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="nro_documento_persona"
+                      cachedSortKeyPosition="4"
+                      externalMetadataColumnId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NroDocumento]"
+                      lineageId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[nro_documento_persona]" />
+                    <inputColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cuit_persona]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="cuit_persona"
+                      externalMetadataColumnId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cuit]"
+                      lineageId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[cuit_persona]" />
+                    <inputColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[telefono_persona]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="telefono_persona"
+                      externalMetadataColumnId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Telefono]"
+                      lineageId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[telefono_persona]" />
+                    <inputColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cuenta_cobro]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="cuenta_cobro"
+                      externalMetadataColumnId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CuentaCobro]"
+                      lineageId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[cuenta_cobro]" />
+                    <inputColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[situacion_mora_banco]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="situacion_mora_banco"
+                      externalMetadataColumnId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SituacionMoraBanco]"
+                      lineageId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[situacion_mora_banco]" />
+                    <inputColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[situacion_mora_sf]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="situacion_mora_sf"
+                      externalMetadataColumnId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SituacionMoraSF]"
+                      lineageId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[situacion_mora_sf]" />
+                    <inputColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id_persona]"
+                      cachedDataType="i4"
+                      cachedName="id_persona"
+                      externalMetadataColumnId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NroCliente]"
+                      lineageId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[id_persona]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NroCliente]"
+                      dataType="i4"
+                      name="NroCliente" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Actividad]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Actividad" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Apellido]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Apellido" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Nombre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Nombre" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Sexo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="Sexo" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="Email" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FechaNacimiento]"
+                      codePage="1252"
+                      dataType="str"
+                      length="35"
+                      name="FechaNacimiento" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NroCuentaCliente]"
+                      dataType="i8"
+                      name="NroCuentaCliente" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SectorEconomico]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="SectorEconomico" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CondicionIVA]"
+                      dataType="i4"
+                      name="CondicionIVA" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tipo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Tipo" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Segmento]"
+                      dataType="i4"
+                      name="Segmento" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TipoDocumento]"
+                      dataType="wstr"
+                      length="10"
+                      name="TipoDocumento" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NroDocumento]"
+                      dataType="wstr"
+                      length="8"
+                      name="NroDocumento" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cuit]"
+                      dataType="wstr"
+                      length="15"
+                      name="Cuit" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Telefono]"
+                      dataType="wstr"
+                      length="10"
+                      name="Telefono" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CuentaCobro]"
+                      dataType="wstr"
+                      length="40"
+                      name="CuentaCobro" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SituacionMoraBanco]"
+                      dataType="i4"
+                      name="SituacionMoraBanco" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SituacionMoraSF]"
+                      dataType="i4"
+                      name="SituacionMoraSF" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insertar_registros\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insertar_registros\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insertar_registros\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insertar_registros\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insertar_registros\Ordenar_elminarDuplicados"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Ordenar_elminarDuplicados"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Inputs[Sort Input].Columns[apellido_persona]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="apellido_persona"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[apellido_persona]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Inputs[Sort Input].Columns[nombre_persona]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="nombre_persona"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[nombre_persona]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Inputs[Sort Input].Columns[email_persona]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="email_persona"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[email_persona]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Inputs[Sort Input].Columns[actividad_persona]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="actividad_persona"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[actividad_persona]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Inputs[Sort Input].Columns[sexo_persona]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="sexo_persona"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[sexo_persona]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Inputs[Sort Input].Columns[fecha_nacimiento_persona]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="35"
+                      cachedName="fecha_nacimiento_persona"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[fecha_nacimiento_persona]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Inputs[Sort Input].Columns[nro_cuenta_cliente_persona]"
+                      cachedDataType="i8"
+                      cachedName="nro_cuenta_cliente_persona"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[nro_cuenta_cliente_persona]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Inputs[Sort Input].Columns[sector_economico]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="sector_economico"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[sector_economico]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Inputs[Sort Input].Columns[condicioniva_persona]"
+                      cachedDataType="i4"
+                      cachedName="condicioniva_persona"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[condicioniva_persona]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Inputs[Sort Input].Columns[tipo_persona]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="tipo_persona"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[tipo_persona]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Inputs[Sort Input].Columns[segmento_persona]"
+                      cachedDataType="i4"
+                      cachedName="segmento_persona"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[segmento_persona]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Inputs[Sort Input].Columns[tipo_documento_persona]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="tipo_documento_persona"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[tipo_documento_persona]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Inputs[Sort Input].Columns[nro_documento_persona]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="nro_documento_persona"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[nro_documento_persona]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Inputs[Sort Input].Columns[cuit_persona]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="cuit_persona"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[cuit_persona]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Inputs[Sort Input].Columns[telefono_persona]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="telefono_persona"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[telefono_persona]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Inputs[Sort Input].Columns[cuenta_cobro]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="cuenta_cobro"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[cuenta_cobro]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Inputs[Sort Input].Columns[situacion_mora_banco]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="situacion_mora_banco"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[situacion_mora_banco]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Inputs[Sort Input].Columns[situacion_mora_sf]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="situacion_mora_sf"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[situacion_mora_sf]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Inputs[Sort Input].Columns[id_persona]"
+                      cachedDataType="i4"
+                      cachedName="id_persona"
+                      lineageId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[id_persona]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[apellido_persona]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[apellido_persona]"
+                      name="apellido_persona"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[apellido_persona]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[nombre_persona]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[nombre_persona]"
+                      name="nombre_persona"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[nombre_persona]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[email_persona]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      lineageId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[email_persona]"
+                      name="email_persona"
+                      sortKeyPosition="3">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[email_persona]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[actividad_persona]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[actividad_persona]"
+                      name="actividad_persona">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[actividad_persona]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[sexo_persona]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[sexo_persona]"
+                      name="sexo_persona">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[sexo_persona]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[fecha_nacimiento_persona]"
+                      codePage="1252"
+                      dataType="str"
+                      length="35"
+                      lineageId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[fecha_nacimiento_persona]"
+                      name="fecha_nacimiento_persona">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[fecha_nacimiento_persona]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[nro_cuenta_cliente_persona]"
+                      dataType="i8"
+                      lineageId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[nro_cuenta_cliente_persona]"
+                      name="nro_cuenta_cliente_persona">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[nro_cuenta_cliente_persona]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[sector_economico]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[sector_economico]"
+                      name="sector_economico">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[sector_economico]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[condicioniva_persona]"
+                      dataType="i4"
+                      lineageId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[condicioniva_persona]"
+                      name="condicioniva_persona">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[condicioniva_persona]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[tipo_persona]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[tipo_persona]"
+                      name="tipo_persona">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[tipo_persona]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[segmento_persona]"
+                      dataType="i4"
+                      lineageId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[segmento_persona]"
+                      name="segmento_persona">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[segmento_persona]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[tipo_documento_persona]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[tipo_documento_persona]"
+                      name="tipo_documento_persona">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[tipo_documento_persona]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[nro_documento_persona]"
+                      dataType="wstr"
+                      length="8"
+                      lineageId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[nro_documento_persona]"
+                      name="nro_documento_persona"
+                      sortKeyPosition="4">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[nro_documento_persona]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[cuit_persona]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[cuit_persona]"
+                      name="cuit_persona">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[cuit_persona]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[telefono_persona]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[telefono_persona]"
+                      name="telefono_persona">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[telefono_persona]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[cuenta_cobro]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[cuenta_cobro]"
+                      name="cuenta_cobro">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[cuenta_cobro]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[situacion_mora_banco]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[situacion_mora_banco]"
+                      name="situacion_mora_banco">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[situacion_mora_banco]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[situacion_mora_sf]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[situacion_mora_sf]"
+                      name="situacion_mora_sf">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[situacion_mora_sf]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[id_persona]"
+                      dataType="i4"
+                      lineageId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output].Columns[id_persona]"
+                      name="id_persona">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output].Columns[id_persona]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Insertar_registros.Paths[Flat File Source Output]"
+              endId="Package\Insertar_registros\Ordenar_elminarDuplicados.Inputs[Sort Input]"
+              name="Flat File Source Output"
+              startId="Package\Insertar_registros\Flat File Source.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Insertar_registros.Paths[Sort Output]"
+              endId="Package\Insertar_registros\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Sort Output"
+              startId="Package\Insertar_registros\Ordenar_elminarDuplicados.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\Insertar_registros"
+          TopLeft="422.142864331907,65.0000009116005" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Insertar_registros">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Insertar_registros\OLE DB Destination"
+          TopLeft="345.714291601765,206.470591130967" />
+        <NodeLayout
+          Size="208,41.6"
+          Id="Package\Insertar_registros\Ordenar_elminarDuplicados"
+          TopLeft="332.857148525666,118.670589854726" />
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Insertar_registros\Flat File Source"
+          TopLeft="356.428577498514,23.7058826854071" />
+        <EdgeLayout
+          Id="Package\Insertar_registros.Paths[Flat File Source Output]"
+          TopLeft="434.24286301209,65.3058826854071">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53.3647071693187"
+              Start="0,0"
+              End="0,45.8647071693187">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.8647071693187" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insertar_registros.Paths[Sort Output]"
+          TopLeft="433.885720063716,160.270589854726">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46.2000012762407"
+              Start="0,0"
+              End="0,38.7000012762407">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.7000012762407" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insertar_registros\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

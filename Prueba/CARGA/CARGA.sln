@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31911.196
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "CARGA", "CARGA\CARGA.dtproj", "{CD0B62D7-5D61-43D9-B005-B4CB2D739B8B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CD0B62D7-5D61-43D9-B005-B4CB2D739B8B}.Development|Default.ActiveCfg = Development
+		{CD0B62D7-5D61-43D9-B005-B4CB2D739B8B}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {530EA71E-DC7C-49B7-A1E0-A2F1B0B195FB}
+	EndGlobalSection
+EndGlobal
