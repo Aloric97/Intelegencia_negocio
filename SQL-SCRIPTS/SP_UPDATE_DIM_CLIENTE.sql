@@ -1,0 +1,43 @@
+create procedure sp_update_dim_cliente 
+										@nrocliente int,
+										@actividad char(50),
+										@apellido char(50),
+										@nombre char(50),
+										@sexo char(50),
+										@email char(40),
+										@fechanac date,
+										@nrocuentacliente bigint,
+										@sectoreconomico char(20),
+										@condicioniva char(10),
+										@tipo char(1),
+										@segmento char(20),
+										@tipodocumento char(10),
+										@nrodocumento char(8),
+										@cuit nvarchar(13),
+										@telefono char(10),
+										@cuentacobro char(40),
+										@situacionmorabanco int,
+										@situacionmorasf int
+as
+	update dbo.Dim_Cliente 
+	set 
+		NroCliente = @nrocliente,
+		Actividad = @actividad,
+		Apellido = @apellido,
+		Nombre = @nombre,
+		Sexo = @sexo,
+		Email = @email,
+		FechaNacimiento = @fechanac,
+		NroCuentaCliente = @nrocuentacliente,
+		SectorEconomico = @sectoreconomico,
+		CondicionIVA = @condicioniva,
+		Tipo = @tipo,
+		Segmento = @segmento,
+		TipoDocumento = @tipodocumento,
+		NroDocumento = @nrodocumento,
+		Cuit = @cuit,
+		Telefono = @telefono,
+		CuentaCobro = @cuentacobro,
+		SituacionMoraBanco = @situacionmorabanco,
+		SituacionMoraSF = @situacionmorasf
+	where NroDocumento = @nrodocumento and Cuit = @cuit
