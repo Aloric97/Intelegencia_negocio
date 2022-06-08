@@ -1,8 +1,7 @@
 <?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:ObjectName="Administrador de conexiones de archivos planos 2"
+  DTS:ObjectName="domicilios"
   DTS:DTSID="{FEB3C33B-2AFA-4F21-BAD0-4B24A2573CD5}"
-  DTS:Description="domicilios"
   DTS:CreationName="FLATFILE">
   <DTS:ObjectData>
     <DTS:ConnectionManager
@@ -18,77 +17,77 @@
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x002C_"
-          DTS:DataType="16"
+          DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="id_domicilio"
-          DTS:DTSID="{1DE97140-7B27-4F0F-B968-FED5C88682B9}"
+          DTS:DTSID="{69580743-6BE0-45F0-967E-DE217756DCAE}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x002C_"
-          DTS:MaximumWidth="23"
-          DTS:DataType="129"
+          DTS:MaximumWidth="21"
+          DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="calle"
-          DTS:DTSID="{327FE37E-0D5A-4992-8547-419B58A27C5A}"
+          DTS:DTSID="{72D8C4E5-46F3-4051-9F1B-DCA639A1340A}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x002C_"
-          DTS:DataType="2"
+          DTS:MaximumWidth="50"
+          DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="puerta"
-          DTS:DTSID="{70268676-30AA-419B-80B3-25B8392F2E51}"
+          DTS:DTSID="{3FFA2D95-5316-49EB-809C-2BB8AE6826C1}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x002C_"
-          DTS:DataType="16"
+          DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="piso"
-          DTS:DTSID="{9A2676FE-33D2-4D5A-833A-B797DD4DC028}"
+          DTS:DTSID="{C70AA39B-8DE6-4ABD-9560-079290DD3737}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x002C_"
-          DTS:MaximumWidth="10"
-          DTS:DataType="129"
+          DTS:DataType="135"
           DTS:TextQualified="True"
           DTS:ObjectName="direccion_hasta"
-          DTS:DTSID="{80895B97-1146-490B-B3C9-4CCCD2C3A5A8}"
+          DTS:DTSID="{158B7942-5F3E-4F52-914C-47E0ED53AE77}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x002C_"
-          DTS:DataType="129"
+          DTS:DataType="135"
           DTS:TextQualified="True"
           DTS:ObjectName="direccion_desde"
-          DTS:DTSID="{515394A0-660B-40C7-AE0B-F0FEE816666C}"
+          DTS:DTSID="{FDBE3945-BD8B-4289-80BC-5D67663F27D7}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x002C_"
           DTS:MaximumWidth="5"
-          DTS:DataType="129"
+          DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="provincia_persona"
-          DTS:DTSID="{17D6CB2F-924B-4203-8817-8814FA102F1A}"
+          DTS:DTSID="{FECFC3AF-149F-431A-8177-D6760DFF739F}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x002C_"
-          DTS:DataType="16"
+          DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="id_localidad"
-          DTS:DTSID="{50EA8B4A-19C1-42FF-B367-321656589F46}"
+          DTS:DTSID="{B0670F87-70EA-4115-9735-B4632CD0A1C1}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x000A_"
-          DTS:DataType="16"
+          DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="id_cliente"
-          DTS:DTSID="{F91BFFE6-16DB-4BA4-8FC1-07B7A74A5C47}"
+          DTS:DTSID="{99F2CAB7-0F32-4EE7-AC51-08238CD50217}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>
