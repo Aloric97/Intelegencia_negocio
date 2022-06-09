@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:ObjectName="Administrador de conexiones de archivos planos 1"
+  DTS:ObjectName="localidad"
   DTS:DTSID="{D113ADA9-7130-4439-B3D5-648E0AF78DA5}"
   DTS:CreationName="FLATFILE">
   <DTS:ObjectData>
@@ -20,7 +20,7 @@
           DTS:DataType="16"
           DTS:TextQualified="True"
           DTS:ObjectName="id_localidad"
-          DTS:DTSID="{E6E69E7E-37F2-4DD5-AD73-68ACDF1C936E}"
+          DTS:DTSID="{0688B529-F3D6-4874-917E-8CEFF295DB3F}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -29,7 +29,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="descripcion_localidad"
-          DTS:DTSID="{4EAB334F-F411-4895-9674-C94A2724DE25}"
+          DTS:DTSID="{ADA2D8FD-7113-418E-B497-887CBCDA8D1D}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -37,7 +37,7 @@
           DTS:DataType="2"
           DTS:TextQualified="True"
           DTS:ObjectName="codigo_postal"
-          DTS:DTSID="{3B9F5CF5-144B-4E48-8BC1-ADCEAC9E1AE5}"
+          DTS:DTSID="{FC25ECBF-9BF1-4F01-88B2-17F0892503C2}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>
