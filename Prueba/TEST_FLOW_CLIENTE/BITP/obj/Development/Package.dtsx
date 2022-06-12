@@ -11,8 +11,8 @@
   DTS:LocaleID="11274"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="48"
-  DTS:VersionGUID="{C9E02787-E0C1-429E-B605-F42E49CFC0E5}">
+  DTS:VersionBuild="59"
+  DTS:VersionGUID="{3E6602CB-3B83-47B2-AB9D-8659ED6F735B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -1844,9 +1844,8 @@ where [refTable].[Cuit] = ?</property>
                       name="NroDocumento" />
                     <externalMetadataColumn
                       refId="Package\CustomerDataLoad\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cuit]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
+                      dataType="wstr"
+                      length="13"
                       name="Cuit" />
                     <externalMetadataColumn
                       refId="Package\CustomerDataLoad\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Telefono]"
@@ -1932,6 +1931,209 @@ where [refTable].[Cuit] = ?</property>
           version="1">
           <components>
             <component
+              refId="Package\Data Flow Task\Address Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Address Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Dim_Domicilio]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Address Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{D992807E-86D7-4B29-A83E-549F60B03E01}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-NMR1OVP_INSTANCEBI.BancoV2]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Address Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Address Destination.Inputs[OLE DB Destination Input].Columns[calle]"
+                      cachedDataType="wstr"
+                      cachedLength="21"
+                      cachedName="calle"
+                      externalMetadataColumnId="Package\Data Flow Task\Address Destination.Inputs[OLE DB Destination Input].ExternalColumns[Calle]"
+                      lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[calle]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Address Destination.Inputs[OLE DB Destination Input].Columns[puerta]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="puerta"
+                      externalMetadataColumnId="Package\Data Flow Task\Address Destination.Inputs[OLE DB Destination Input].ExternalColumns[Puerta]"
+                      lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[puerta]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Address Destination.Inputs[OLE DB Destination Input].Columns[piso]"
+                      cachedDataType="i4"
+                      cachedName="piso"
+                      externalMetadataColumnId="Package\Data Flow Task\Address Destination.Inputs[OLE DB Destination Input].ExternalColumns[Piso]"
+                      lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[piso]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Address Destination.Inputs[OLE DB Destination Input].Columns[id_domicilio]"
+                      cachedDataType="i4"
+                      cachedName="id_domicilio"
+                      externalMetadataColumnId="Package\Data Flow Task\Address Destination.Inputs[OLE DB Destination Input].ExternalColumns[IdDomicilio]"
+                      lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[id_domicilio]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Address Destination.Inputs[OLE DB Destination Input].Columns[id_cliente]"
+                      cachedDataType="i4"
+                      cachedName="id_cliente"
+                      externalMetadataColumnId="Package\Data Flow Task\Address Destination.Inputs[OLE DB Destination Input].ExternalColumns[NroCliente]"
+                      lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[id_cliente]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Address Destination.Inputs[OLE DB Destination Input].Columns[provincia_persona]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="provincia_persona"
+                      externalMetadataColumnId="Package\Data Flow Task\Address Destination.Inputs[OLE DB Destination Input].ExternalColumns[Provincia]"
+                      lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[provincia_persona]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Address Destination.Inputs[OLE DB Destination Input].Columns[id_localidad]"
+                      cachedDataType="i4"
+                      cachedName="id_localidad"
+                      externalMetadataColumnId="Package\Data Flow Task\Address Destination.Inputs[OLE DB Destination Input].ExternalColumns[NroLocalidad]"
+                      lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[id_localidad]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Address Destination.Inputs[OLE DB Destination Input].Columns[direccion_desde]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="direccion_desde"
+                      externalMetadataColumnId="Package\Data Flow Task\Address Destination.Inputs[OLE DB Destination Input].ExternalColumns[VigenciaDesde]"
+                      lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[direccion_desde]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Address Destination.Inputs[OLE DB Destination Input].ExternalColumns[DW_id_domicilio]"
+                      dataType="i4"
+                      name="DW_id_domicilio" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Address Destination.Inputs[OLE DB Destination Input].ExternalColumns[IdDomicilio]"
+                      dataType="i4"
+                      name="IdDomicilio" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Address Destination.Inputs[OLE DB Destination Input].ExternalColumns[NroLocalidad]"
+                      dataType="i4"
+                      name="NroLocalidad" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Address Destination.Inputs[OLE DB Destination Input].ExternalColumns[NroCliente]"
+                      dataType="i4"
+                      name="NroCliente" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Address Destination.Inputs[OLE DB Destination Input].ExternalColumns[VigenciaHasta]"
+                      dataType="dbTimeStamp"
+                      name="VigenciaHasta" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Address Destination.Inputs[OLE DB Destination Input].ExternalColumns[Calle]"
+                      dataType="wstr"
+                      length="50"
+                      name="Calle" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Address Destination.Inputs[OLE DB Destination Input].ExternalColumns[VigenciaDesde]"
+                      dataType="dbTimeStamp"
+                      name="VigenciaDesde" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Address Destination.Inputs[OLE DB Destination Input].ExternalColumns[Puerta]"
+                      dataType="wstr"
+                      length="10"
+                      name="Puerta" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Address Destination.Inputs[OLE DB Destination Input].ExternalColumns[Piso]"
+                      dataType="i4"
+                      name="Piso" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Address Destination.Inputs[OLE DB Destination Input].ExternalColumns[Departamento]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="Departamento" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Address Destination.Inputs[OLE DB Destination Input].ExternalColumns[Provincia]"
+                      dataType="wstr"
+                      length="20"
+                      name="Provincia" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Address Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\Address Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Address Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Address Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Address Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Address Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Data Flow Task\Derived Column"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -1943,16 +2145,25 @@ where [refTable].[Cuit] = ?</property>
                   refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[direccion_hasta]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="direccion_hasta"
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[VigenciaHasta]"
+                      dataType="dbTimeStamp"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[direccion_hasta]"
-                      truncationRowDisposition="FailComponent"
-                      usageType="readWrite">
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[VigenciaHasta]"
+                      name="VigenciaHasta"
+                      truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
@@ -1966,18 +2177,8 @@ where [refTable].[Cuit] = ?</property>
                           expressionType="Notify"
                           name="FriendlyExpression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
                       </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]"
-                  description="Default Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  name="Derived Column Output"
-                  synchronousInputId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                    </outputColumn>
+                  </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
@@ -2017,16 +2218,26 @@ where [refTable].[Cuit] = ?</property>
                   refId="Package\Data Flow Task\Derived Column 1.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Derived Column 1.Inputs[Derived Column Input].Columns[direccion_desde]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="direccion_desde"
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[VigenciaDesde]"
+                      dataType="dbTimeStamp"
+                      description="VigenciaDesde"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[direccion_desde]"
-                      truncationRowDisposition="FailComponent"
-                      usageType="readWrite">
+                      lineageId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[VigenciaDesde]"
+                      name="VigenciaDesde"
+                      truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
@@ -2040,18 +2251,8 @@ where [refTable].[Cuit] = ?</property>
                           expressionType="Notify"
                           name="FriendlyExpression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
                       </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output]"
-                  description="Default Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  name="Derived Column Output"
-                  synchronousInputId="Package\Data Flow Task\Derived Column 1.Inputs[Derived Column Input]">
+                    </outputColumn>
+                  </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
@@ -2457,12 +2658,6 @@ where [refTable].[Cuit] = ?</property>
                       externalMetadataColumnId="Package\Data Flow Task\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[NroCliente]"
                       lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[id_cliente]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Insertar destino.Inputs[OLE DB Destination Input].Columns[direccion_hasta]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="direccion_hasta"
-                      externalMetadataColumnId="Package\Data Flow Task\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[VigenciaHasta]"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[direccion_hasta]" />
-                    <inputColumn
                       refId="Package\Data Flow Task\Insertar destino.Inputs[OLE DB Destination Input].Columns[calle]"
                       cachedDataType="wstr"
                       cachedLength="21"
@@ -2470,11 +2665,11 @@ where [refTable].[Cuit] = ?</property>
                       externalMetadataColumnId="Package\Data Flow Task\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[Calle]"
                       lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[calle]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Insertar destino.Inputs[OLE DB Destination Input].Columns[direccion_desde]"
+                      refId="Package\Data Flow Task\Insertar destino.Inputs[OLE DB Destination Input].Columns[VigenciaDesde]"
                       cachedDataType="dbTimeStamp"
-                      cachedName="direccion_desde"
+                      cachedName="VigenciaDesde"
                       externalMetadataColumnId="Package\Data Flow Task\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[VigenciaDesde]"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[direccion_desde]" />
+                      lineageId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[VigenciaDesde]" />
                     <inputColumn
                       refId="Package\Data Flow Task\Insertar destino.Inputs[OLE DB Destination Input].Columns[puerta]"
                       cachedDataType="wstr"
@@ -2576,6 +2771,147 @@ where [refTable].[Cuit] = ?</property>
               </outputs>
             </component>
             <component
+              refId="Package\Data Flow Task\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Dim_Domicilio]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Dim_Domicilio]) [refTable]
+where [refTable].[IdDomicilio] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="DW_id_domicilio" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="IdDomicilio" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NroLocalidad" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NroCliente" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VigenciaHasta" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Calle" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VigenciaDesde" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Puerta" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Piso" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Departamento" dataType="DT_STR" length="2" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Provincia" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[id_domicilio]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="{D992807E-86D7-4B29-A83E-549F60B03E01}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-NMR1OVP_INSTANCEBI.BancoV2]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Lookup.Inputs[Lookup Input].Columns[id_domicilio]"
+                      cachedDataType="i4"
+                      cachedName="id_domicilio"
+                      lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[id_domicilio]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">IdDomicilio</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Data Flow Task\OLE DB Command"
               componentClassID="Microsoft.OLEDBCommand"
               contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
@@ -2622,11 +2958,11 @@ where [refTable].[Cuit] = ?</property>
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                       lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[id_domicilio]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[direccion_hasta]"
+                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[VigenciaHasta]"
                       cachedDataType="dbTimeStamp"
-                      cachedName="direccion_hasta"
+                      cachedName="VigenciaHasta"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[direccion_hasta]" />
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[VigenciaHasta]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2705,7 +3041,7 @@ where [refTable].[Cuit] = ?</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[Dim_Domicilio] SET [Calle] = ?,[NroCliente] = ?,[NroLocalidad] = ?,[Piso] = ?,[Provincia] = ?,[Puerta] = ?,[VigenciaDesde] = ?,[VigenciaHasta] = ? WHERE [IdDomicilio] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[Dim_Domicilio] SET [Calle] = ?,[NroCliente] = ?,[NroLocalidad] = ?,[Piso] = ?,[Provincia] = ?,[Puerta] = ? WHERE [IdDomicilio] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2738,7 +3074,7 @@ where [refTable].[Cuit] = ?</property>
                       refId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[id_domicilio]"
                       cachedDataType="i4"
                       cachedName="id_domicilio"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
                       lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[id_domicilio]" />
                     <inputColumn
                       refId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[id_cliente]"
@@ -2772,18 +3108,6 @@ where [refTable].[Cuit] = ?</property>
                       cachedName="puerta"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
                       lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[puerta]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[direccion_desde]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="direccion_desde"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
-                      lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[direccion_desde]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[direccion_hasta]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="direccion_hasta"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
-                      lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[direccion_hasta]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2858,30 +3182,8 @@ where [refTable].[Cuit] = ?</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
-                      dataType="dbTimeStamp"
-                      name="Param_6">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
-                      dataType="dbTimeStamp"
-                      name="Param_7">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
                       dataType="i4"
-                      name="Param_8">
+                      name="Param_6">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -2936,7 +3238,7 @@ where [refTable].[Cuit] = ?</property>
                   dataType="System.String"
                   description="Specifies the SELECT statement used to create a schema rowset."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Calle], [IdDomicilio], [NroCliente], [NroLocalidad], [Piso], [Provincia], [Puerta], [VigenciaDesde], [VigenciaHasta] FROM [dbo].[Dim_Domicilio]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Calle], [IdDomicilio], [NroCliente], [NroLocalidad], [Piso], [Provincia], [Puerta],[VigenciaDesde],[VigenciaHasta] FROM [dbo].[Dim_Domicilio]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -3183,133 +3485,6 @@ where [refTable].[Cuit] = ?</property>
               version="1">
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1]"
-                  name="Union All Input 1">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[id_cliente]"
-                      cachedDataType="i4"
-                      cachedName="id_cliente"
-                      lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[id_cliente]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[id_cliente]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[id_domicilio]"
-                      cachedDataType="i4"
-                      cachedName="id_domicilio"
-                      lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[id_domicilio]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[id_domicilio]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[calle]"
-                      cachedDataType="wstr"
-                      cachedLength="21"
-                      cachedName="calle"
-                      lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[calle]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[calle]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[puerta]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="puerta"
-                      lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[puerta]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[puerta]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[piso]"
-                      cachedDataType="i4"
-                      cachedName="piso"
-                      lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[piso]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[piso]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[direccion_hasta]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="direccion_hasta"
-                      lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[direccion_hasta]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[direccion_hasta]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[direccion_desde]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="direccion_desde"
-                      lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[direccion_desde]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[direccion_desde]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[provincia_persona]"
-                      cachedDataType="wstr"
-                      cachedLength="5"
-                      cachedName="provincia_persona"
-                      lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[provincia_persona]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[provincia_persona]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[id_localidad]"
-                      cachedDataType="i4"
-                      cachedName="id_localidad"
-                      lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[id_localidad]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[id_localidad]}</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-                <input
                   refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2]"
                   hasSideEffects="true"
                   name="Union All Input 2">
@@ -3438,10 +3613,10 @@ where [refTable].[Cuit] = ?</property>
                   <externalMetadataColumns />
                 </input>
                 <input
-                  refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3]"
+                  refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1]"
                   dangling="true"
                   hasSideEffects="true"
-                  name="Union All Input 3">
+                  name="Union All Input 1">
                   <externalMetadataColumns />
                 </input>
               </inputs>
@@ -3517,7 +3692,7 @@ where [refTable].[Cuit] = ?</property>
               startId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output]" />
             <path
               refId="Package\Data Flow Task.Paths[Flat File Source Output]"
-              endId="Package\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+              endId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]"
               name="Flat File Source Output"
               startId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output]" />
             <path
@@ -3531,10 +3706,15 @@ where [refTable].[Cuit] = ?</property>
               name="Inferred Member Updates Output"
               startId="Package\Data Flow Task\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[New Output]"
-              endId="Package\Data Flow Task\Union All.Inputs[Union All Input 1]"
-              name="New Output"
-              startId="Package\Data Flow Task\Slowly Changing Dimension.Outputs[New Output]" />
+              refId="Package\Data Flow Task.Paths[Lookup Match Output]"
+              endId="Package\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+              name="Lookup Match Output"
+              startId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Lookup No Match Output]"
+              endId="Package\Data Flow Task\Address Destination.Inputs[OLE DB Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\Data Flow Task\Lookup.Outputs[Lookup No Match Output]" />
             <path
               refId="Package\Data Flow Task.Paths[OLE DB Command Output]"
               endId="Package\Data Flow Task\Union All.Inputs[Union All Input 2]"
@@ -3582,6 +3762,10 @@ where [refTable].[Cuit] = ?</property>
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="168,42"
+          Id="Package\Cargar Localidades"
+          TopLeft="645,181" />
+        <NodeLayout
+          Size="168,42"
           Id="Package\CustomerDataLoad"
           TopLeft="334,179" />
         <NodeLayout
@@ -3622,10 +3806,6 @@ where [refTable].[Cuit] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="168,42"
-          Id="Package\Cargar Localidades"
-          TopLeft="645,181" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 1]"
           TopLeft="729,223">
@@ -3664,46 +3844,111 @@ where [refTable].[Cuit] = ?</property>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\CustomerDataLoad">
+    design-time-name="Package\Cargar Localidades">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="171,42"
-          Id="Package\CustomerDataLoad\OLE DB Destination"
-          TopLeft="201,259.666666666667" />
-        <NodeLayout
-          Size="113,42"
-          Id="Package\CustomerDataLoad\Lookup"
-          TopLeft="409.222222222222,142" />
+          Id="Package\Cargar Localidades\OLE DB Destination"
+          TopLeft="464,271" />
         <NodeLayout
           Size="151,42"
-          Id="Package\CustomerDataLoad\Flat File Source"
-          TopLeft="391.777777777778,45.7777777777778" />
-        <NodeLayout
-          Size="166,42"
-          Id="Package\CustomerDataLoad\OLE DB Command"
-          TopLeft="567.333333333333,259.666666666667" />
+          Id="Package\Cargar Localidades\Flat File Source"
+          TopLeft="467,66" />
         <EdgeLayout
-          Id="Package\CustomerDataLoad.Paths[Flat File Source Output]"
-          TopLeft="466.5,87.7777777777778">
+          Id="Package\Cargar Localidades.Paths[Flat File Source Output]"
+          TopLeft="546,108">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,54.2222222222222"
+              EndConnector="0,163"
               Start="0,0"
-              End="0,46.7222222222222">
+              End="0,155.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,46.7222222222222" />
+                    End="0,155.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cargar Localidades\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\CustomerDataLoad">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="166,42"
+          Id="Package\CustomerDataLoad\OLE DB Command"
+          TopLeft="567.333333333333,259.666666666667" />
+        <NodeLayout
+          Size="113,42"
+          Id="Package\CustomerDataLoad\Lookup"
+          TopLeft="409.222222222222,142" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\CustomerDataLoad\OLE DB Destination"
+          TopLeft="201,259.666666666667" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\CustomerDataLoad\Flat File Source"
+          TopLeft="391.777777777778,45.7777777777778" />
+        <EdgeLayout
+          Id="Package\CustomerDataLoad.Paths[Lookup No Match Output]"
+          TopLeft="448.222222222222,184">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-161.722222222222,75.666666666667"
+              Start="0,0"
+              End="-161.722222222222,68.166666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.9005235602096" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.9005235602096"
+                    Point2="0,30.9005235602096"
+                    Point3="-4,30.9005235602096" />
+                  <mssgle:LineSegment
+                    End="-157.722222222222,30.9005235602096" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-157.722222222222,30.9005235602096"
+                    Point2="-161.722222222222,30.9005235602096"
+                    Point3="-161.722222222222,34.9005235602096" />
+                  <mssgle:LineSegment
+                    End="-161.722222222222,68.166666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-136.667497829861,35.9005235602096,111.6127734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3743,44 +3988,53 @@ where [refTable].[Cuit] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\CustomerDataLoad.Paths[Lookup No Match Output]"
-          TopLeft="448.222222222222,184">
+          Id="Package\CustomerDataLoad.Paths[Flat File Source Output]"
+          TopLeft="466.5,87.7777777777778">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-161.722222222222,75.666666666667"
+              EndConnector="0,54.2222222222222"
               Start="0,0"
-              End="-161.722222222222,68.166666666667">
+              End="0,46.7222222222222">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.9005235602096" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.9005235602096"
-                    Point2="0,30.9005235602096"
-                    Point3="-4,30.9005235602096" />
-                  <mssgle:LineSegment
-                    End="-157.722222222222,30.9005235602096" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-157.722222222222,30.9005235602096"
-                    Point2="-161.722222222222,30.9005235602096"
-                    Point3="-161.722222222222,34.9005235602096" />
-                  <mssgle:LineSegment
-                    End="-161.722222222222,68.166666666667" />
+                    End="0,46.7222222222222" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-136.667497829861,35.9005235602096,111.6127734375,11.609375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\CustomerDataLoad\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_Cliente]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\CustomerDataLoad\OLE DB Destination">
     <Properties>
@@ -3794,71 +4048,26 @@ where [refTable].[Cuit] = ?</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\CustomerDataLoad\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_Cliente]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="160,42"
           Id="Package\Data Flow Task\Flat File Source 1"
-          TopLeft="152.5,5.5" />
+          TopLeft="152.5,23.5" />
         <NodeLayout
           Size="209,42"
           Id="Package\Data Flow Task\Slowly Changing Dimension"
-          TopLeft="128,107.5" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Flat File Source Output]"
-          TopLeft="232.5,47.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="659,172.5" />
         <NodeLayout
           Size="154,42"
           Id="Package\Data Flow Task\Derived Column"
-          TopLeft="17.5000000000001,209.5" />
+          TopLeft="548.5,274.5" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Historical Attribute Inserts Output]"
-          TopLeft="182.25,149.5">
+          TopLeft="713.25,214.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3895,10 +4104,10 @@ where [refTable].[Cuit] = ?</property>
         <NodeLayout
           Size="166,42"
           Id="Package\Data Flow Task\OLE DB Command"
-          TopLeft="5.50000000000006,311.5" />
+          TopLeft="536.5,376.5" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="91.5000000000001,251.5">
+          TopLeft="622.5,316.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3910,80 +4119,6 @@ where [refTable].[Cuit] = ?</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Data Flow Task\Union All"
-          TopLeft="172,413.5" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[New Output]"
-          TopLeft="232.5,149.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="18.8333333333334,264"
-              Start="0,0"
-              End="18.8333333333334,256.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,152.332789559543" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,152.332789559543"
-                    Point2="0,156.332789559543"
-                    Point3="4,156.332789559543" />
-                  <mssgle:LineSegment
-                    End="14.8333333333334,156.332789559543" />
-                  <mssgle:CubicBezierSegment
-                    Point1="14.8333333333334,156.332789559543"
-                    Point2="18.8333333333334,156.332789559543"
-                    Point3="18.8333333333334,160.332789559543" />
-                  <mssgle:LineSegment
-                    End="18.8333333333334,256.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-17.6747200520833,161.332789559543,54.1827734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Command Output]"
-          TopLeft="88.5000000000001,353.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="125.166666666667,60"
-              Start="0,0"
-              End="125.166666666667,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5301794453507" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.5301794453507"
-                    Point2="0,35.5301794453507"
-                    Point3="4,35.5301794453507" />
-                  <mssgle:LineSegment
-                    End="121.166666666667,35.5301794453507" />
-                  <mssgle:CubicBezierSegment
-                    Point1="121.166666666667,35.5301794453507"
-                    Point2="125.166666666667,35.5301794453507"
-                    Point3="125.166666666667,39.5301794453507" />
-                  <mssgle:LineSegment
-                    End="125.166666666667,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3995,36 +4130,14 @@ where [refTable].[Cuit] = ?</property>
         <NodeLayout
           Size="163,42"
           Id="Package\Data Flow Task\Derived Column 1"
-          TopLeft="151,515.5" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Union All Output 1]"
-          TopLeft="232.5,455.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="682,580.5" />
         <NodeLayout
           Size="153,42"
           Id="Package\Data Flow Task\Insertar destino"
-          TopLeft="156,617.5" />
+          TopLeft="687,682.5" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Derived Column Output1]"
-          TopLeft="232.5,557.5">
+          TopLeft="763.5,622.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4047,10 +4160,10 @@ where [refTable].[Cuit] = ?</property>
         <NodeLayout
           Size="175,42"
           Id="Package\Data Flow Task\OLE DB Command 1"
-          TopLeft="294,209.5" />
+          TopLeft="825,274.5" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Inferred Member Updates Output]"
-          TopLeft="282.75,149.5">
+          TopLeft="813.75,214.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4084,36 +4197,24 @@ where [refTable].[Cuit] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
-    design-time-name="Package\Cargar Localidades">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="151,42"
-          Id="Package\Cargar Localidades\Flat File Source"
-          TopLeft="467,66" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Cargar Localidades\OLE DB Destination"
-          TopLeft="464,271" />
+          Size="121,42"
+          Id="Package\Data Flow Task\Union All"
+          TopLeft="703,478.5" />
         <EdgeLayout
-          Id="Package\Cargar Localidades.Paths[Flat File Source Output]"
-          TopLeft="546,108">
+          Id="Package\Data Flow Task.Paths[Union All Output 1]"
+          TopLeft="763.5,520.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,163"
+              EndConnector="0,60"
               Start="0,0"
-              End="0,155.5">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,155.5" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4122,22 +4223,145 @@ where [refTable].[Cuit] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Command Output]"
+          TopLeft="619.5,418.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="125.166666666667,60"
+              Start="0,0"
+              End="125.166666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5301794453508" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5301794453508"
+                    Point2="0,35.5301794453508"
+                    Point3="4,35.5301794453508" />
+                  <mssgle:LineSegment
+                    End="121.166666666667,35.5301794453508" />
+                  <mssgle:CubicBezierSegment
+                    Point1="121.166666666667,35.5301794453508"
+                    Point2="125.166666666667,35.5301794453508"
+                    Point3="125.166666666667,39.5301794453508" />
+                  <mssgle:LineSegment
+                    End="125.166666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="113,42"
+          Id="Package\Data Flow Task\Lookup"
+          TopLeft="178.5,202.5" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Data Flow Task\Address Destination"
+          TopLeft="139.5,309.5" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup No Match Output]"
+          TopLeft="235,244.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9.5,65"
+              Start="0,0"
+              End="-9.5,57.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.5"
+                    Point2="0,32.5"
+                    Point3="-4,32.5" />
+                  <mssgle:LineSegment
+                    End="-5.5,32.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5.5,32.5"
+                    Point2="-9.5,32.5"
+                    Point3="-9.5,36.5" />
+                  <mssgle:LineSegment
+                    End="-9.5,57.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-60.55638671875,37.5,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="233.75,65.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,137"
+              Start="0,0"
+              End="0,129.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,129.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup Match Output]"
+          TopLeft="291.5,223.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="367.5,-30"
+              Start="0,0"
+              End="360,-30">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="179.75,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="179.75,0"
+                    Point2="183.75,0"
+                    Point3="183.75,-4" />
+                  <mssgle:LineSegment
+                    End="183.75,-26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="183.75,-26"
+                    Point2="183.75,-30"
+                    Point3="187.75,-30" />
+                  <mssgle:LineSegment
+                    End="360,-30" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="135.55861328125,1,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Cargar Localidades\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\Slowly Changing Dimension">
     <Properties>
@@ -4191,18 +4415,6 @@ where [refTable].[Cuit] = ?</property>
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Flat File Source 1.Outputs[Flat File Source Output].Columns[direccion_desde]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;VigenciaDesde&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Flat File Source 1.Outputs[Flat File Source Output].Columns[direccion_hasta]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;VigenciaHasta&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
   &lt;/InputToColumnsCollection&gt;
   &lt;GeneratedComponentsIdentificationStrings&gt;
     &lt;anyType xsi:type="xsd:string"&gt;Derived Column&lt;/anyType&gt;
@@ -4224,6 +4436,19 @@ where [refTable].[Cuit] = ?</property>
   &lt;DateVariable&gt;System::StartTime&lt;/DateVariable&gt;
   &lt;EnableInferredSupport&gt;true&lt;/EnableInferredSupport&gt;
 &lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Insertar destino">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
