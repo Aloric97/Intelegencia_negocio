@@ -1,0 +1,282 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="5c878d2d-01c5-43ac-8d0f-a20b2d25dd95" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Banco_V2</ID>
+  <Name>Banco_V2</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="0b53b2be-796b-4bd8-8f31-271df478650a">
+      <ID>Dim Lineas De Prestamos</ID>
+      <Name>Dim Lineas De Prestamos</Name>
+      <DimensionID>Dim Lineas De Prestamos</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="0dc2246a-62ac-4980-8cd3-27f03db58ef4">
+          <AttributeID>DW Id Linea</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="e14eae82-dfdd-4060-af60-00e75623682a">
+      <ID>Dim Cliente</ID>
+      <Name>Dim Cliente</Name>
+      <DimensionID>Dim Cliente</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="f5a4815f-8d86-4561-9c7e-c608739d073a">
+          <AttributeID>DW Id Cliente</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="de6b28f9-a823-488b-a757-b03cc8d27b75">
+      <ID>Dim Sucursal</ID>
+      <Name>Dim Sucursal</Name>
+      <DimensionID>Dim Sucursal</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="88262323-07e0-47fe-bec4-b3652efca4da">
+          <AttributeID>DW Id Sucursal</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="2b1a76b7-4312-4160-8f2d-b219cf0a404c">
+          <AttributeID>DW Id Localidad</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="7e0094a3-8829-47e9-86e0-d90ef15bd2d3">
+      <ID>Dim Tiempo</ID>
+      <Name>Dim Tiempo</Name>
+      <DimensionID>Dim Tiempo</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="ce7a7f94-6e13-4d95-b68b-22e3787c6cf1">
+          <AttributeID>DW Id Fecha</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="ea9824fd-8e20-4acd-8ad9-585f25451741">
+      <ID>Fact Prestamos</ID>
+      <Name>Fact Prestamos</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="0810a90a-b47d-4687-8b29-28431dad911a">
+          <ID>Monto Adeudado</ID>
+          <Name>Monto Adeudado</Name>
+          <Source dwd:design-time-name="be582430-6a45-483b-8d58-69f0071ae51e">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="112288b9-6ce6-412b-af1a-e69b38ae3fa5">
+              <TableID>dbo_Fact_Prestamos</TableID>
+              <ColumnID>MontoAdeudado</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="e23c496c-0fcd-4c6c-9717-a0100be28b05">
+          <ID>Cantidad Cuotas</ID>
+          <Name>Cantidad Cuotas</Name>
+          <Source dwd:design-time-name="697b49e2-c2b3-4bd4-b996-f7b355ba555c">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="3413034d-f8c4-429e-989c-3bb4e7faf360">
+              <TableID>dbo_Fact_Prestamos</TableID>
+              <ColumnID>CantidadCuotas</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="26990e94-df0f-4668-b05c-d4dc3d1bafa6">
+          <ID>Monto Total Pagado</ID>
+          <Name>Monto Total Pagado</Name>
+          <Source dwd:design-time-name="2d769426-ebc0-4f27-998a-84b49c46ba5d">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="29fb8322-2b45-48d8-a46d-4b967a373166">
+              <TableID>dbo_Fact_Prestamos</TableID>
+              <ColumnID>MontoTotalPagado</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="c6f20a34-7fc9-4cc6-97a6-a2cd4e0d70e7">
+          <ID>Interes Moratorio</ID>
+          <Name>Interes Moratorio</Name>
+          <Source dwd:design-time-name="ecdcb5ff-6f30-48eb-9ae9-f257569b2194">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="0206fada-f182-48da-bfa8-0f93fcc65827">
+              <TableID>dbo_Fact_Prestamos</TableID>
+              <ColumnID>InteresMoratorio</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="2b943592-fa42-465f-aa68-431769cf8d43">
+          <ID>Interes Punitorio</ID>
+          <Name>Interes Punitorio</Name>
+          <Source dwd:design-time-name="8e3b2563-d438-4aed-a8a0-837a02267d88">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="bd45451c-715c-4d14-9e24-4c4152242f94">
+              <TableID>dbo_Fact_Prestamos</TableID>
+              <ColumnID>InteresPunitorio</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="899b2790-2552-4862-ad36-31fcbf3357d8">
+          <ID>Interes Compensatorio</ID>
+          <Name>Interes Compensatorio</Name>
+          <Source dwd:design-time-name="826bf029-ba7d-43ca-8853-a9d3852b39ad">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="2de47a45-1726-48b8-8301-5736704abaeb">
+              <TableID>dbo_Fact_Prestamos</TableID>
+              <ColumnID>InteresCompensatorio</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="d89d1683-bf0c-4b86-8fd1-275563cf081f">
+          <ID>Dias Atraso</ID>
+          <Name>Dias Atraso</Name>
+          <Source dwd:design-time-name="5580f96a-6679-4fef-9bfd-30b2870a2ef5">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="49b4b6b5-fd7d-41e8-96ae-d19708319c3a">
+              <TableID>dbo_Fact_Prestamos</TableID>
+              <ColumnID>DiasAtraso</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="f2d72bac-d466-40fd-aa76-32fd8cafd21c">
+          <ID>Monto Prestado</ID>
+          <Name>Monto Prestado</Name>
+          <Source dwd:design-time-name="a7ea089c-6ea4-48c8-958e-3c6d9509d40a">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="68917ed7-cbae-404a-921e-1fa68bc337c1">
+              <TableID>dbo_Fact_Prestamos</TableID>
+              <ColumnID>MontoPrestado</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="201be53f-454b-46f7-995d-86e8f805d022">
+          <ID>Recuento Fact Prestamos</ID>
+          <Name>Recuento Fact Prestamos</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="140dfd1f-5030-476f-9874-1d63ab59e520">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="f10ce280-dc16-4b59-8087-5e9dfa222587">
+              <TableID>dbo_Fact_Prestamos</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="86d01c4b-2847-4e9a-8f7a-a9bfbf3b5822">
+          <CubeDimensionID>Dim Lineas De Prestamos</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="d513acb4-1334-42f1-9484-b3ad53bdcdf8">
+              <AttributeID>DW Id Linea</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="39f453d4-da60-4876-b50e-13faac6cfc92">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="2ae647e6-d606-49b3-8268-076741957bd7">
+                    <TableID>dbo_Fact_Prestamos</TableID>
+                    <ColumnID>DW_id_linea</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="c5bb5325-3b3c-4233-b2d9-4d7a6304b3e4">
+          <CubeDimensionID>Dim Cliente</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="61225727-b62b-4332-84c5-b48b4f41b087">
+              <AttributeID>DW Id Cliente</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="103a385a-320e-4f56-8cee-21fd004f9065">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="3de63148-e556-461e-9c71-beb4c6e97a93">
+                    <TableID>dbo_Fact_Prestamos</TableID>
+                    <ColumnID>DW_id_cliente</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="2eb0c156-db19-4628-9137-229d089431f3">
+          <CubeDimensionID>Dim Sucursal</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="6bb09a46-c2e8-4dab-bc09-68bb078f1153">
+              <AttributeID>DW Id Sucursal</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="37a539ea-4957-47d6-8d62-6329254c296f">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="0b9f0c29-60bf-4bc2-a23b-4db477a338bc">
+                    <TableID>dbo_Fact_Prestamos</TableID>
+                    <ColumnID>DW_id_sucursal</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="32a48607-9aad-426d-bd2a-a81e20dd7928">
+          <CubeDimensionID>Dim Tiempo</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="d4670179-24b0-41cb-b9dc-61cea7a88549">
+              <AttributeID>DW Id Fecha</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="9da7dcf4-2a7c-422f-a2f2-efd16ebd0970">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="4854a757-7a83-4f3e-9042-1deb367e4370">
+                    <TableID>dbo_Fact_Prestamos</TableID>
+                    <ColumnID>DW_id_fecha</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="b33cd48e-b416-4ac2-b36c-4cb455edb0e2">
+    <DataSourceViewID>Banco_V2</DataSourceViewID>
+  </Source>
+</Cube>
