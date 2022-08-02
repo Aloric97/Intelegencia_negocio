@@ -11,8 +11,8 @@
   DTS:LocaleID="11274"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="307"
-  DTS:VersionGUID="{05364474-78A6-4387-95F6-C276115A17F6}">
+  DTS:VersionBuild="313"
+  DTS:VersionGUID="{3BFB4EF1-0C1A-4904-93A7-541086E6570C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -940,9 +940,9 @@
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"> insert into Dim_Domicilio (DW_id_localidad, DW_id_cliente, Localidad, Calle, VigenciaDesde, Puerta, Piso, Provincia, NroCliente)
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"> insert into Dim_Domicilio (DW_id_localidad,DW_id_cliente,Localidad, Calle, VigenciaDesde, Puerta, Piso, Provincia, NroCliente)
 
-values((select DW_id_localidad from Dim_Localidad where NombreLocalidad =  ?), (select DW_id_cliente from Dim_Cliente where NroCliente = ?), ?, ? ,?,?,?,?,?)
+values((select DW_id_localidad from Dim_Localidad where NombreLocalidad = ?),(select DW_id_cliente from Dim_Cliente where NroCliente = ?),?, ? ,?,?,?,?,?)
 </property>
                 <property
                   dataType="System.Int32"
@@ -966,11 +966,25 @@ values((select DW_id_localidad from Dim_Localidad where NombreLocalidad =  ?), (
                   name="OLE DB Command Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Carga de Domicilios\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[id_cliente]"
+                      refId="Package\Carga de Domicilios\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Localidad]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Localidad"
+                      externalMetadataColumnId="Package\Carga de Domicilios\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Carga de Domicilios\Copy Column.Outputs[Copy Column Output].Columns[Localidad]" />
+                    <inputColumn
+                      refId="Package\Carga de Domicilios\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[NroCliente]"
                       cachedDataType="i4"
-                      cachedName="id_cliente"
+                      cachedName="NroCliente"
                       externalMetadataColumnId="Package\Carga de Domicilios\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\Carga de Domicilios\Union All.Outputs[Union All Output 1].Columns[id_cliente]" />
+                      lineageId="Package\Carga de Domicilios\Copy Column.Outputs[Copy Column Output].Columns[NroCliente]" />
+                    <inputColumn
+                      refId="Package\Carga de Domicilios\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[nomb_localidad]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="nomb_localidad"
+                      externalMetadataColumnId="Package\Carga de Domicilios\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Carga de Domicilios\Union All.Outputs[Union All Output 1].Columns[nomb_localidad]" />
                     <inputColumn
                       refId="Package\Carga de Domicilios\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[calle]"
                       cachedDataType="wstr"
@@ -1005,25 +1019,11 @@ values((select DW_id_localidad from Dim_Localidad where NombreLocalidad =  ?), (
                       externalMetadataColumnId="Package\Carga de Domicilios\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
                       lineageId="Package\Carga de Domicilios\Union All.Outputs[Union All Output 1].Columns[provincia_persona]" />
                     <inputColumn
-                      refId="Package\Carga de Domicilios\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[nomb_localidad]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="nomb_localidad"
-                      externalMetadataColumnId="Package\Carga de Domicilios\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\Carga de Domicilios\Union All.Outputs[Union All Output 1].Columns[nomb_localidad]" />
-                    <inputColumn
-                      refId="Package\Carga de Domicilios\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[NroCliente]"
+                      refId="Package\Carga de Domicilios\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[id_cliente]"
                       cachedDataType="i4"
-                      cachedName="NroCliente"
+                      cachedName="id_cliente"
                       externalMetadataColumnId="Package\Carga de Domicilios\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
-                      lineageId="Package\Carga de Domicilios\Copy Column.Outputs[Copy Column Output].Columns[NroCliente]" />
-                    <inputColumn
-                      refId="Package\Carga de Domicilios\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Localidad]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Localidad"
-                      externalMetadataColumnId="Package\Carga de Domicilios\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      lineageId="Package\Carga de Domicilios\Copy Column.Outputs[Copy Column Output].Columns[Localidad]" />
+                      lineageId="Package\Carga de Domicilios\Union All.Outputs[Union All Output 1].Columns[id_cliente]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1117,7 +1117,7 @@ values((select DW_id_localidad from Dim_Localidad where NombreLocalidad =  ?), (
                         <property
                           dataType="System.Int32"
                           description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
+                          name="DBParamInfoFlags">65</property>
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
@@ -11645,34 +11645,34 @@ end</property>
               startId="Package\Carga Prestamo_Fact\Conditional Split.Outputs[No Vencido No pago]" />
             <path
               refId="Package\Carga Prestamo_Fact.Paths[Derived Column Output5]"
-              endId="Package\Carga Prestamo_Fact\Sort 8.Inputs[Sort Input]"
-              name="Derived Column Output"
-              startId="Package\Carga Prestamo_Fact\Derived Column 2.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Carga Prestamo_Fact.Paths[Derived Column Output4]"
-              endId="Package\Carga Prestamo_Fact\Sort 9.Inputs[Sort Input]"
-              name="Derived Column Output"
-              startId="Package\Carga Prestamo_Fact\Derived Column 1.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Carga Prestamo_Fact.Paths[Derived Column Output3]"
               endId="Package\Carga Prestamo_Fact\Multicast.Inputs[Multicast Input 1]"
               name="Derived Column Output"
               startId="Package\Carga Prestamo_Fact\Dias de Atraso.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Carga Prestamo_Fact.Paths[Derived Column Output1]"
-              endId="Package\Carga Prestamo_Fact\Dias de Atraso.Inputs[Derived Column Input]"
+              refId="Package\Carga Prestamo_Fact.Paths[Derived Column Output4]"
+              endId="Package\Carga Prestamo_Fact\Sort 8.Inputs[Sort Input]"
               name="Derived Column Output"
-              startId="Package\Carga Prestamo_Fact\Esta Vencido.Outputs[Derived Column Output]" />
+              startId="Package\Carga Prestamo_Fact\Derived Column 2.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Carga Prestamo_Fact.Paths[Derived Column Output]"
+              refId="Package\Carga Prestamo_Fact.Paths[Derived Column Output3]"
+              endId="Package\Carga Prestamo_Fact\Sort 9.Inputs[Sort Input]"
+              name="Derived Column Output"
+              startId="Package\Carga Prestamo_Fact\Derived Column 1.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Carga Prestamo_Fact.Paths[Derived Column Output1]"
               endId="Package\Carga Prestamo_Fact\Aggregate 2.Inputs[Aggregate Input 1]"
               name="Derived Column Output"
               startId="Package\Carga Prestamo_Fact\Derived Column 2 1.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Carga Prestamo_Fact.Paths[Derived Column Output2]"
+              refId="Package\Carga Prestamo_Fact.Paths[Derived Column Output]"
               endId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input]"
               name="Derived Column Output"
               startId="Package\Carga Prestamo_Fact\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Carga Prestamo_Fact.Paths[Derived Column Output2]"
+              endId="Package\Carga Prestamo_Fact\Dias de Atraso.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\Carga Prestamo_Fact\Esta Vencido.Outputs[Derived Column Output]" />
             <path
               refId="Package\Carga Prestamo_Fact.Paths[EstaPago]"
               endId="Package\Carga Prestamo_Fact\Aggregate 1.Inputs[Aggregate Input 1]"
@@ -14383,6 +14383,10 @@ where [refTable].[NroCliente] = ?</property>
           Size="168,42"
           Id="Package\CustomerDataLoad"
           TopLeft="200,72" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Tarea Ejecutar SQL"
+          TopLeft="902,72" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción]"
           TopLeft="284,114">
@@ -14587,10 +14591,6 @@ where [refTable].[NroCliente] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="170,42"
-          Id="Package\Tarea Ejecutar SQL"
-          TopLeft="902,72" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 6]"
           TopLeft="987,114">
@@ -14634,6 +14634,14 @@ where [refTable].[NroCliente] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="175,42"
+          Id="Package\Carga de Domicilios\OLE DB Command 2"
+          TopLeft="294,209.5" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\Carga de Domicilios\Slowly Changing Dimension"
+          TopLeft="128,107.5" />
+        <NodeLayout
           Size="151,42"
           Id="Package\Carga de Domicilios\Flat File Source"
           TopLeft="157,5.5" />
@@ -14641,14 +14649,6 @@ where [refTable].[NroCliente] = ?</property>
           Size="154,42"
           Id="Package\Carga de Domicilios\Derived Column"
           TopLeft="17.5000000000001,209.5" />
-        <NodeLayout
-          Size="209,42"
-          Id="Package\Carga de Domicilios\Slowly Changing Dimension"
-          TopLeft="128,107.5" />
-        <NodeLayout
-          Size="175,42"
-          Id="Package\Carga de Domicilios\OLE DB Command 2"
-          TopLeft="294,209.5" />
         <NodeLayout
           Size="166,42"
           Id="Package\Carga de Domicilios\OLE DB Command"
@@ -14669,6 +14669,28 @@ where [refTable].[NroCliente] = ?</property>
           Size="121,42"
           Id="Package\Carga de Domicilios\Union All"
           TopLeft="172,413.5" />
+        <EdgeLayout
+          Id="Package\Carga de Domicilios.Paths[Copy Column Output]"
+          TopLeft="457.5,557.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Carga de Domicilios.Paths[Union All Output 1]"
           TopLeft="232.5,455.5">
@@ -14880,28 +14902,6 @@ where [refTable].[NroCliente] = ?</property>
         <EdgeLayout
           Id="Package\Carga de Domicilios.Paths[Derived Column Output]"
           TopLeft="91.5000000000001,251.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Carga de Domicilios.Paths[Copy Column Output]"
-          TopLeft="457.5,557.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -15200,41 +15200,57 @@ where [refTable].[NroCliente] = ?</property>
       <GraphLayout
         Capacity="128" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="155,42"
-          Id="Package\Carga Prestamo_Fact\Conditional Split"
-          TopLeft="319,628" />
+          Size="147,42"
+          Id="Package\Carga Prestamo_Fact\Dias de Atraso"
+          TopLeft="505,375" />
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Carga Prestamo_Fact\Flat File Source 1"
+          TopLeft="309,34" />
         <NodeLayout
           Size="107,42"
-          Id="Package\Carga Prestamo_Fact\Sort 6"
-          TopLeft="42,1358" />
+          Id="Package\Carga Prestamo_Fact\Sort 3"
+          TopLeft="439,828" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Carga Prestamo_Fact\Derived Column 2 1"
+          TopLeft="11,1191" />
         <NodeLayout
           Size="98,42"
           Id="Package\Carga Prestamo_Fact\Sort"
           TopLeft="321,126" />
         <NodeLayout
+          Size="166,42"
+          Id="Package\Carga Prestamo_Fact\OLE DB Command"
+          TopLeft="447,1544" />
+        <NodeLayout
           Size="139,42"
           Id="Package\Carga Prestamo_Fact\Merge Join 2"
           TopLeft="458,1359" />
-        <NodeLayout
-          Size="120,42"
-          Id="Package\Carga Prestamo_Fact\Multicast"
-          TopLeft="575,629" />
         <NodeLayout
           Size="107,42"
           Id="Package\Carga Prestamo_Fact\Sort 2"
           TopLeft="249,828" />
         <NodeLayout
+          Size="107,42"
+          Id="Package\Carga Prestamo_Fact\Sort 6"
+          TopLeft="42,1358" />
+        <NodeLayout
+          Size="120,42"
+          Id="Package\Carga Prestamo_Fact\Multicast"
+          TopLeft="575,629" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Carga Prestamo_Fact\Derived Column"
+          TopLeft="458,1443" />
+        <NodeLayout
+          Size="136,42"
+          Id="Package\Carga Prestamo_Fact\Aggregate 2"
+          TopLeft="29,1271" />
+        <NodeLayout
           Size="130,42"
           Id="Package\Carga Prestamo_Fact\Merge Join"
           TopLeft="520,209" />
-        <NodeLayout
-          Size="139,42"
-          Id="Package\Carga Prestamo_Fact\Merge Join 1"
-          TopLeft="341,916" />
-        <NodeLayout
-          Size="107,42"
-          Id="Package\Carga Prestamo_Fact\Sort 9"
-          TopLeft="841,921" />
         <NodeLayout
           Size="163,42"
           Id="Package\Carga Prestamo_Fact\Derived Column 2"
@@ -15244,9 +15260,17 @@ where [refTable].[NroCliente] = ?</property>
           Id="Package\Carga Prestamo_Fact\Derived Column 1"
           TopLeft="824,833" />
         <NodeLayout
+          Size="155,42"
+          Id="Package\Carga Prestamo_Fact\Conditional Split"
+          TopLeft="319,628" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Carga Prestamo_Fact\Merge Join 1"
+          TopLeft="341,916" />
+        <NodeLayout
           Size="136,42"
-          Id="Package\Carga Prestamo_Fact\Aggregate 2"
-          TopLeft="29,1271" />
+          Id="Package\Carga Prestamo_Fact\Aggregate 1"
+          TopLeft="236,740" />
         <NodeLayout
           Size="108,42"
           Id="Package\Carga Prestamo_Fact\Merge"
@@ -15256,25 +15280,29 @@ where [refTable].[NroCliente] = ?</property>
           Id="Package\Carga Prestamo_Fact\Sort 5"
           TopLeft="43,738" />
         <NodeLayout
+          Size="107,42"
+          Id="Package\Carga Prestamo_Fact\Sort 1"
+          TopLeft="811,90" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\Carga Prestamo_Fact\Sort 9"
+          TopLeft="841,921" />
+        <NodeLayout
           Size="139,42"
           Id="Package\Carga Prestamo_Fact\Merge Join 3"
           TopLeft="590,999" />
         <NodeLayout
           Size="107,42"
-          Id="Package\Carga Prestamo_Fact\Sort 1"
-          TopLeft="811,90" />
-        <NodeLayout
-          Size="136,42"
-          Id="Package\Carga Prestamo_Fact\Aggregate 1"
-          TopLeft="236,740" />
-        <NodeLayout
-          Size="151,42"
-          Id="Package\Carga Prestamo_Fact\Flat File Source"
-          TopLeft="783,12" />
+          Id="Package\Carga Prestamo_Fact\Sort 7"
+          TopLeft="598,828" />
         <NodeLayout
           Size="107,42"
           Id="Package\Carga Prestamo_Fact\Sort 8"
           TopLeft="360,1108" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Carga Prestamo_Fact\Flat File Source"
+          TopLeft="783,12" />
         <NodeLayout
           Size="107,42"
           Id="Package\Carga Prestamo_Fact\Sort 4"
@@ -15284,37 +15312,231 @@ where [refTable].[NroCliente] = ?</property>
           Id="Package\Carga Prestamo_Fact\Sort 10"
           TopLeft="599,1117" />
         <NodeLayout
-          Size="139,42"
-          Id="Package\Carga Prestamo_Fact\Esta Vencido"
-          TopLeft="515,288" />
-        <NodeLayout
-          Size="107,42"
-          Id="Package\Carga Prestamo_Fact\Sort 7"
-          TopLeft="598,828" />
-        <NodeLayout
-          Size="147,42"
-          Id="Package\Carga Prestamo_Fact\Dias de Atraso"
-          TopLeft="505,375" />
-        <NodeLayout
-          Size="160,42"
-          Id="Package\Carga Prestamo_Fact\Flat File Source 1"
-          TopLeft="309,34" />
-        <NodeLayout
           Size="136,42"
           Id="Package\Carga Prestamo_Fact\Aggregate 3"
           TopLeft="818,736" />
         <NodeLayout
-          Size="172,42"
-          Id="Package\Carga Prestamo_Fact\Derived Column 2 1"
-          TopLeft="11,1191" />
-        <NodeLayout
-          Size="107,42"
-          Id="Package\Carga Prestamo_Fact\Sort 3"
-          TopLeft="439,828" />
+          Size="139,42"
+          Id="Package\Carga Prestamo_Fact\Esta Vencido"
+          TopLeft="515,288" />
         <NodeLayout
           Size="127,42"
           Id="Package\Carga Prestamo_Fact\Aggregate"
           TopLeft="424,731" />
+        <EdgeLayout
+          Id="Package\Carga Prestamo_Fact.Paths[Derived Column Output4]"
+          TopLeft="413,1039">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,69"
+              Start="0,0"
+              End="0,61.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga Prestamo_Fact.Paths[Conditional Split Default Output]"
+          TopLeft="359.75,670">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-263.25,68"
+              Start="0,0"
+              End="-263.25,60.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.4334038054968" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.4334038054968"
+                    Point2="0,23.4334038054968"
+                    Point3="-4,23.4334038054968" />
+                  <mssgle:LineSegment
+                    End="-259.25,23.4334038054968" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-259.25,23.4334038054968"
+                    Point2="-263.25,23.4334038054968"
+                    Point3="-263.25,27.4334038054968" />
+                  <mssgle:LineSegment
+                    End="-263.25,60.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-177.11703125,28.4334038054968,90.9840625,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga Prestamo_Fact.Paths[Aggregate Output 13]"
+          TopLeft="886,778">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="19.5,55"
+              Start="0,0"
+              End="19.5,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.5"
+                    Point2="0,27.5"
+                    Point3="4,27.5" />
+                  <mssgle:LineSegment
+                    End="15.5,27.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15.5,27.5"
+                    Point2="19.5,27.5"
+                    Point3="19.5,31.5" />
+                  <mssgle:LineSegment
+                    End="19.5,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga Prestamo_Fact.Paths[Aggregate Output 12]"
+          TopLeft="96.25,1313">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga Prestamo_Fact.Paths[Aggregate Output 11]"
+          TopLeft="303.25,782">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46"
+              Start="0,0"
+              End="0,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga Prestamo_Fact.Paths[Aggregate Output 1]"
+          TopLeft="490,773">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55"
+              Start="0,0"
+              End="0,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga Prestamo_Fact.Paths[Sort Output10]"
+          TopLeft="302.5,870">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="86.1666666666667,46"
+              Start="0,0"
+              End="86.1666666666667,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.2859174964438" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.2859174964438"
+                    Point2="0,27.2859174964438"
+                    Point3="4,27.2859174964438" />
+                  <mssgle:LineSegment
+                    End="82.1666666666667,27.2859174964438" />
+                  <mssgle:CubicBezierSegment
+                    Point1="82.1666666666667,27.2859174964438"
+                    Point2="86.1666666666667,27.2859174964438"
+                    Point3="86.1666666666667,31.2859174964438" />
+                  <mssgle:LineSegment
+                    End="86.1666666666667,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga Prestamo_Fact.Paths[Sort Output9]"
+          TopLeft="650,773">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55"
+              Start="0,0"
+              End="0,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Carga Prestamo_Fact.Paths[Sort Output8]"
           TopLeft="655.5,1159">
@@ -15496,31 +15718,31 @@ where [refTable].[NroCliente] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Carga Prestamo_Fact.Paths[Sort Output10]"
-          TopLeft="302.5,870">
+          Id="Package\Carga Prestamo_Fact.Paths[Sort Output2]"
+          TopLeft="864.5,132">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="86.1666666666667,46"
+              EndConnector="-259.166666666667,77"
               Start="0,0"
-              End="86.1666666666667,38.5">
+              End="-259.166666666667,69.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.2859174964438" />
+                    End="0,41.6382978723404" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,23.2859174964438"
-                    Point2="0,27.2859174964438"
-                    Point3="4,27.2859174964438" />
+                    Point1="0,41.6382978723404"
+                    Point2="0,45.6382978723404"
+                    Point3="-4,45.6382978723404" />
                   <mssgle:LineSegment
-                    End="82.1666666666667,27.2859174964438" />
+                    End="-255.166666666667,45.6382978723404" />
                   <mssgle:CubicBezierSegment
-                    Point1="82.1666666666667,27.2859174964438"
-                    Point2="86.1666666666667,27.2859174964438"
-                    Point3="86.1666666666667,31.2859174964438" />
+                    Point1="-255.166666666667,45.6382978723404"
+                    Point2="-259.166666666667,45.6382978723404"
+                    Point3="-259.166666666667,49.6382978723404" />
                   <mssgle:LineSegment
-                    End="86.1666666666667,38.5" />
+                    End="-259.166666666667,69.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -15577,62 +15799,6 @@ where [refTable].[NroCliente] = ?</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="301.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Carga Prestamo_Fact.Paths[Sort Output9]"
-          TopLeft="650,773">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,55"
-              Start="0,0"
-              End="0,47.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,47.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Carga Prestamo_Fact.Paths[Sort Output2]"
-          TopLeft="864.5,132">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-259.166666666667,77"
-              Start="0,0"
-              End="-259.166666666667,69.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41.6382978723404" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,41.6382978723404"
-                    Point2="0,45.6382978723404"
-                    Point3="-4,45.6382978723404" />
-                  <mssgle:LineSegment
-                    End="-255.166666666667,45.6382978723404" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-255.166666666667,45.6382978723404"
-                    Point2="-259.166666666667,45.6382978723404"
-                    Point3="-259.166666666667,49.6382978723404" />
-                  <mssgle:LineSegment
-                    End="-259.166666666667,69.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -15754,6 +15920,28 @@ where [refTable].[NroCliente] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Carga Prestamo_Fact.Paths[Merge Join Output]"
+          TopLeft="531.25,1401">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Carga Prestamo_Fact.Paths[Merge Join Output1]"
           TopLeft="657.5,1041">
           <EdgeLayout.Curve>
@@ -15776,28 +15964,6 @@ where [refTable].[NroCliente] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Carga Prestamo_Fact.Paths[Merge Join Output3]"
-          TopLeft="411.5,958">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39"
-              Start="0,0"
-              End="0,31.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Carga Prestamo_Fact.Paths[Merge Join Output2]"
           TopLeft="584.75,251">
           <EdgeLayout.Curve>
@@ -15811,6 +15977,28 @@ where [refTable].[NroCliente] = ?</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga Prestamo_Fact.Paths[Merge Join Output3]"
+          TopLeft="411.5,958">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39"
+              Start="0,0"
+              End="0,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -15949,6 +16137,30 @@ where [refTable].[NroCliente] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Carga Prestamo_Fact.Paths[Derived Column Output]"
+          TopLeft="532.5,1485">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59"
+              Start="0,0"
+              End="0,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,17.75,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga Prestamo_Fact.Paths[Derived Column Output1]"
           TopLeft="97,1233">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -15970,7 +16182,7 @@ where [refTable].[NroCliente] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Carga Prestamo_Fact.Paths[Derived Column Output1]"
+          Id="Package\Carga Prestamo_Fact.Paths[Derived Column Output2]"
           TopLeft="581.5,330">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -15993,28 +16205,6 @@ where [refTable].[NroCliente] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Carga Prestamo_Fact.Paths[Derived Column Output5]"
-          TopLeft="413,1039">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,69"
-              Start="0,0"
-              End="0,61.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,61.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Carga Prestamo_Fact.Paths[Derived Column Output3]"
           TopLeft="578.5,417">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -16048,7 +16238,7 @@ where [refTable].[NroCliente] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Carga Prestamo_Fact.Paths[Derived Column Output4]"
+          Id="Package\Carga Prestamo_Fact.Paths[Derived Column Output3]"
           TopLeft="905.5,875">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -16079,196 +16269,6 @@ where [refTable].[NroCliente] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Carga Prestamo_Fact.Paths[Conditional Split Default Output]"
-          TopLeft="359.75,670">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-263.25,68"
-              Start="0,0"
-              End="-263.25,60.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.4334038054968" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.4334038054968"
-                    Point2="0,23.4334038054968"
-                    Point3="-4,23.4334038054968" />
-                  <mssgle:LineSegment
-                    End="-259.25,23.4334038054968" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-259.25,23.4334038054968"
-                    Point2="-263.25,23.4334038054968"
-                    Point3="-263.25,27.4334038054968" />
-                  <mssgle:LineSegment
-                    End="-263.25,60.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-177.11703125,28.4334038054968,90.9840625,11.6630859375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Carga Prestamo_Fact.Paths[Aggregate Output 13]"
-          TopLeft="886,778">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="19.5,55"
-              Start="0,0"
-              End="19.5,47.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.5"
-                    Point2="0,27.5"
-                    Point3="4,27.5" />
-                  <mssgle:LineSegment
-                    End="15.5,27.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="15.5,27.5"
-                    Point2="19.5,27.5"
-                    Point3="19.5,31.5" />
-                  <mssgle:LineSegment
-                    End="19.5,47.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Carga Prestamo_Fact.Paths[Aggregate Output 12]"
-          TopLeft="96.25,1313">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,45"
-              Start="0,0"
-              End="0,37.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Carga Prestamo_Fact.Paths[Aggregate Output 11]"
-          TopLeft="303.25,782">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,46"
-              Start="0,0"
-              End="0,38.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Carga Prestamo_Fact.Paths[Aggregate Output 1]"
-          TopLeft="490,773">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,55"
-              Start="0,0"
-              End="0,47.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,47.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Carga Prestamo_Fact\OLE DB Command"
-          TopLeft="447,1544" />
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Carga Prestamo_Fact\Derived Column"
-          TopLeft="458,1443" />
-        <EdgeLayout
-          Id="Package\Carga Prestamo_Fact.Paths[Merge Join Output]"
-          TopLeft="531.25,1401">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,42"
-              Start="0,0"
-              End="0,34.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Carga Prestamo_Fact.Paths[Derived Column Output2]"
-          TopLeft="532.5,1485">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59"
-              Start="0,0"
-              End="0,51.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,51.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-8,17.75,16,16"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -16376,35 +16376,13 @@ where [refTable].[NroCliente] = ?</property>
           Id="Package\Cargar Localidades\OLE DB Destination"
           TopLeft="466,295" />
         <NodeLayout
-          Size="151,42"
-          Id="Package\Cargar Localidades\Flat File Source"
-          TopLeft="467,66" />
-        <NodeLayout
           Size="113,42"
           Id="Package\Cargar Localidades\Lookup"
           TopLeft="491,173" />
-        <EdgeLayout
-          Id="Package\Cargar Localidades.Paths[Flat File Source Output]"
-          TopLeft="545,108">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,65"
-              Start="0,0"
-              End="0,57.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,57.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Cargar Localidades\Flat File Source"
+          TopLeft="467,66" />
         <EdgeLayout
           Id="Package\Cargar Localidades.Paths[Lookup No Match Output]"
           TopLeft="549.5,215">
@@ -16429,9 +16407,54 @@ where [refTable].[NroCliente] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Cargar Localidades.Paths[Flat File Source Output]"
+          TopLeft="545,108">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65"
+              Start="0,0"
+              End="0,57.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cargar Localidades\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_Localidad]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\CustomerDataLoad">
     <LayoutInfo>
@@ -16550,28 +16573,5 @@ where [refTable].[NroCliente] = ?</property>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Cargar Localidades\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_Localidad]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
