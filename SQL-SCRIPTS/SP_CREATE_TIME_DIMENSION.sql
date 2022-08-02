@@ -1,21 +1,20 @@
 USE [BancoV2]
 GO
 
-/****** Object:  StoredProcedure [dbo].[sp_update_dim_cliente]    Script Date: 2/8/2022 03:36:08 ******/
+/****** Object:  StoredProcedure [dbo].[sp_create_dim_time]    Script Date: 2/8/2022 11:47:04 ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
 
+
 create procedure [dbo].[sp_create_dim_time] 
 as
-IF (EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND  TABLE_NAME = 'DimDate'))
+IF (EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND  TABLE_NAME = 'Dim_Tiempo'))
 BEGIN
-DROP TABLE DimDate
-END
-
-
+IF (not exists(select * from Dim_Tiempo) )
+BEGIN
 --GO
 --CREATE TABLE	[dbo].[DimDate]
 --	(	[DateKey] INT primary key, 
@@ -199,6 +198,8 @@ BEGIN
 
 
 	SET @CurrentDate = DATEADD(DD, 1, @CurrentDate)
+END
+END
 END
 GO
 
