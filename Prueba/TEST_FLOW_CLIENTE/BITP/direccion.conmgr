@@ -20,7 +20,7 @@
           DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="id_domicilio"
-          DTS:DTSID="{69580743-6BE0-45F0-967E-DE217756DCAE}"
+          DTS:DTSID="{7A4DFBD6-5110-430B-8134-4F891CE04809}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -29,7 +29,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="calle"
-          DTS:DTSID="{72D8C4E5-46F3-4051-9F1B-DCA639A1340A}"
+          DTS:DTSID="{3D883875-97F4-4F6A-84DE-551D62555CD4}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -38,7 +38,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="puerta"
-          DTS:DTSID="{3FFA2D95-5316-49EB-809C-2BB8AE6826C1}"
+          DTS:DTSID="{BCCE35EE-BAB5-4BE7-9A83-7C76AD28ACBC}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -46,7 +46,7 @@
           DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="piso"
-          DTS:DTSID="{C70AA39B-8DE6-4ABD-9560-079290DD3737}"
+          DTS:DTSID="{52E8F3CE-CA4B-4730-909B-A61DEFA645DB}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -54,7 +54,7 @@
           DTS:DataType="135"
           DTS:TextQualified="True"
           DTS:ObjectName="direccion_hasta"
-          DTS:DTSID="{158B7942-5F3E-4F52-914C-47E0ED53AE77}"
+          DTS:DTSID="{3746A047-CBFC-47ED-B20A-A0A70A76BC1E}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -62,7 +62,7 @@
           DTS:DataType="135"
           DTS:TextQualified="True"
           DTS:ObjectName="direccion_desde"
-          DTS:DTSID="{FDBE3945-BD8B-4289-80BC-5D67663F27D7}"
+          DTS:DTSID="{FDFE4A56-44BB-46DD-B4F8-D57ED1724EC1}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -71,23 +71,25 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="provincia_persona"
-          DTS:DTSID="{FECFC3AF-149F-431A-8177-D6760DFF739F}"
+          DTS:DTSID="{8D9FACB4-13A3-480B-B3EA-A5148110A4B9}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x002C_"
-          DTS:DataType="3"
+          DTS:MaximumWidth="50"
+          DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="id_localidad"
-          DTS:DTSID="{B0670F87-70EA-4115-9735-B4632CD0A1C1}"
+          DTS:DTSID="{3C7B81EA-8CEE-45B4-A460-9026240488BA}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x000A_"
-          DTS:DataType="3"
+          DTS:MaximumWidth="50"
+          DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="id_cliente"
-          DTS:DTSID="{99F2CAB7-0F32-4EE7-AC51-08238CD50217}"
+          DTS:DTSID="{B10D830D-FB7E-421C-B7C6-3BE2A0ADEA57}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

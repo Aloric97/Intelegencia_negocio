@@ -1,7 +1,7 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:ObjectName="localidad"
-  DTS:DTSID="{D113ADA9-7130-4439-B3D5-648E0AF78DA5}"
+  DTS:ObjectName="Sucursal"
+  DTS:DTSID="{209E9C4C-1E12-4E34-A11F-393EBBCA38F4}"
   DTS:CreationName="FLATFILE">
   <DTS:ObjectData>
     <DTS:ConnectionManager
@@ -12,32 +12,24 @@
       DTS:RowDelimiter=""
       DTS:TextQualifier="_x003C_none_x003E_"
       DTS:CodePage="1252"
-      DTS:ConnectionString="C:\Users\nicoromero3210\Desktop\bi-Localidad.csv">
+      DTS:ConnectionString="C:\Users\nicoromero3210\Desktop\bi-sucursal.csv">
       <DTS:FlatFileColumns>
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x002C_"
-          DTS:DataType="16"
+          DTS:DataType="3"
           DTS:TextQualified="True"
-          DTS:ObjectName="id_localidad"
-          DTS:DTSID="{1F2DE54F-B757-4561-9910-0FA8A332E3FF}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x002C_"
-          DTS:MaximumWidth="60"
-          DTS:DataType="130"
-          DTS:TextQualified="True"
-          DTS:ObjectName="descripcion_localidad"
-          DTS:DTSID="{A07220B1-CE1A-4F32-B3CF-CB2F0D246429}"
+          DTS:ObjectName="id_sucursal"
+          DTS:DTSID="{043DEF3E-D619-4731-A1F9-34B0C950750A}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x000A_"
-          DTS:DataType="3"
+          DTS:MaximumWidth="255"
+          DTS:DataType="130"
           DTS:TextQualified="True"
-          DTS:ObjectName="codigo_postal"
-          DTS:DTSID="{2DEFB0A6-8A15-4EF4-ACD8-0050DFAC7B45}"
+          DTS:ObjectName="descripcion_sucursal"
+          DTS:DTSID="{3A8F631E-2AE5-4F10-A794-6578ACF39ADE}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

@@ -1,0 +1,133 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="pagos"
+  DTS:DTSID="{0FF7BF80-F323-4EDF-A196-F7015DA8258E}"
+  DTS:CreationName="FLATFILE">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:Format="Delimited"
+      DTS:LocaleID="11274"
+      DTS:HeaderRowDelimiter="_x000D__x000A_"
+      DTS:ColumnNamesInFirstDataRow="True"
+      DTS:RowDelimiter=""
+      DTS:TextQualifier="_x003C_none_x003E_"
+      DTS:CodePage="1252"
+      DTS:ConnectionString="C:\Users\nicoromero3210\Desktop\bi-cuotas-pagos.csv">
+      <DTS:FlatFileColumns>
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:DataType="3"
+          DTS:TextQualified="True"
+          DTS:ObjectName="id_cuota"
+          DTS:DTSID="{F197A89B-7BC3-470B-B107-DE76910E5F01}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:DataType="3"
+          DTS:TextQualified="True"
+          DTS:ObjectName="id_pago_cuota"
+          DTS:DTSID="{357976A2-0F39-415F-A7FF-F47BE5ED996B}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:DataType="3"
+          DTS:TextQualified="True"
+          DTS:ObjectName="nro_cuotas"
+          DTS:DTSID="{62C0CA9B-A7FC-4574-9B1D-0CF3C43693D2}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:DataType="5"
+          DTS:TextQualified="True"
+          DTS:ObjectName="capital"
+          DTS:DTSID="{D09007F5-5083-4C44-A4F1-1EC0DC02929D}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:DataType="5"
+          DTS:TextQualified="True"
+          DTS:ObjectName="interes_compensatorio"
+          DTS:DTSID="{CC673D06-B3D5-4FDB-B150-A1A810423D5C}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:MaximumWidth="1"
+          DTS:DataType="130"
+          DTS:TextQualified="True"
+          DTS:ObjectName="estado_cuotas"
+          DTS:DTSID="{018725FE-9142-4001-BBCA-33B979D08C0F}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:DataType="3"
+          DTS:TextQualified="True"
+          DTS:ObjectName="IVA"
+          DTS:DTSID="{052AD796-96A5-4033-A703-027AFA4390BF}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:DataType="5"
+          DTS:TextQualified="True"
+          DTS:ObjectName="interes_moratorio"
+          DTS:DTSID="{4C9D8207-78A2-424E-A9C3-29F14BC72D83}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:DataType="5"
+          DTS:TextQualified="True"
+          DTS:ObjectName="interes_punitorio"
+          DTS:DTSID="{1ED05BDA-3124-4199-906A-2E1499B0DC35}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:DataType="5"
+          DTS:TextQualified="True"
+          DTS:ObjectName="monto_total"
+          DTS:DTSID="{82BA0466-153D-4529-A50E-17E398963B44}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:DataType="133"
+          DTS:TextQualified="True"
+          DTS:ObjectName="fecha_vencimiento"
+          DTS:DTSID="{EE9700F6-79C5-4FFA-8FFF-E10096C86CF8}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:DataType="133"
+          DTS:TextQualified="True"
+          DTS:ObjectName="fecha_pago"
+          DTS:DTSID="{E1B9FFAA-5C4A-4254-8B4B-9268E7AFAC74}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:DataType="5"
+          DTS:TextQualified="True"
+          DTS:ObjectName="monto"
+          DTS:DTSID="{2F2E9C28-29B2-4858-9166-FA133FCCE0F1}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x000D__x000A_"
+          DTS:DataType="20"
+          DTS:TextQualified="True"
+          DTS:ObjectName="id_prestamo"
+          DTS:DTSID="{8926A748-6B7C-42C0-9D3B-1022145948DE}"
+          DTS:CreationName="" />
+      </DTS:FlatFileColumns>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

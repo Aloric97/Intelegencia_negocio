@@ -20,24 +20,24 @@
           DTS:DataType="16"
           DTS:TextQualified="True"
           DTS:ObjectName="id_localidad"
-          DTS:DTSID="{0688B529-F3D6-4874-917E-8CEFF295DB3F}"
+          DTS:DTSID="{1F2DE54F-B757-4561-9910-0FA8A332E3FF}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x002C_"
-          DTS:MaximumWidth="18"
-          DTS:DataType="129"
+          DTS:MaximumWidth="60"
+          DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="descripcion_localidad"
-          DTS:DTSID="{ADA2D8FD-7113-418E-B497-887CBCDA8D1D}"
+          DTS:DTSID="{A07220B1-CE1A-4F32-B3CF-CB2F0D246429}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x000A_"
-          DTS:DataType="2"
+          DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="codigo_postal"
-          DTS:DTSID="{FC25ECBF-9BF1-4F01-88B2-17F0892503C2}"
+          DTS:DTSID="{2DEFB0A6-8A15-4EF4-ACD8-0050DFAC7B45}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>
