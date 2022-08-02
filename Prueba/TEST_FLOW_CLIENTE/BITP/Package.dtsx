@@ -11,8 +11,8 @@
   DTS:LocaleID="11274"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="313"
-  DTS:VersionGUID="{3BFB4EF1-0C1A-4904-93A7-541086E6570C}">
+  DTS:VersionBuild="314"
+  DTS:VersionGUID="{14DABA00-641D-476F-87DC-FE035290A0D5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -7259,17 +7259,17 @@ values((select DW_id_localidad from Dim_Localidad where NombreLocalidad = ?),(se
                   expressionType="Notify"
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">if not exists(select * from Fact_Prestamos where
-DW_id_sucursal = (select DW_id_sucursal from Dim_sucursal where NumeroSucursal=?) and DW_id_localidad = (select l.DW_id_localidad from Dim_Sucursal s inner join Dim_Localidad l on s.Nrolocalidad = l.NroLocalidad where s.NumeroSucursal = ?) and DW_id_linea = (select DW_id_linea from Dim_LineasDePrestamos where NroLinea = ?) and DW_id_cliente = (select DW_id_cliente from Dim_Cliente where NroCliente = ?)
+DW_id_sucursal = (select DW_id_sucursal from Dim_sucursal where NumeroSucursal=?) and DW_id_linea = (select DW_id_linea from Dim_LineasDePrestamos where NroLinea = ?) and DW_id_cliente = (select DW_id_cliente from Dim_Cliente where NroCliente = ?)
 )
 begin
-insert into Fact_Prestamos(DW_id_sucursal, DW_id_localidad,DW_id_linea,DW_id_fecha,DW_id_cliente,MontoAdeudado,CantidadCuotas,MontoTotalPagado,InteresMoratorio,InteresPunitorio,InteresCompensatorio,DiasAtraso,Montoprestado)
-values((select DW_id_sucursal from Dim_sucursal where NumeroSucursal=?),(select l.DW_id_localidad from Dim_Sucursal s inner join Dim_Localidad l on s.Nrolocalidad = l.NroLocalidad where s.NumeroSucursal = ?),(select DW_id_linea from Dim_LineasDePrestamos where NroLinea = ?), (select DW_id_fecha from Dim_Tiempo where Fecha=?),(select DW_id_cliente from Dim_Cliente where NroCliente = ?),?,?,?,?,?,?,?,?)
+insert into Fact_Prestamos(DW_id_sucursal,DW_id_linea,DW_id_fecha,DW_id_cliente,MontoAdeudado,CantidadCuotas,MontoTotalPagado,InteresMoratorio,InteresPunitorio,InteresCompensatorio,DiasAtraso,Montoprestado)
+values((select DW_id_sucursal from Dim_sucursal where NumeroSucursal=?),(select DW_id_linea from Dim_LineasDePrestamos where NroLinea = ?), (select DW_id_fecha from Dim_Tiempo where Fecha=?),(select DW_id_cliente from Dim_Cliente where NroCliente = ?),?,?,?,?,?,?,?,?)
 end
 else
 begin
 update Fact_Prestamos
 set DW_id_fecha = (select DW_id_fecha from Dim_Tiempo where Fecha=?), MontoAdeudado = ?, MontoTotalPagado = ?, InteresMoratorio = ?, InteresPunitorio = ?, InteresCompensatorio=?, DiasAtraso = ?
-where DW_id_sucursal = (select DW_id_sucursal from Dim_sucursal where NumeroSucursal=?) and DW_id_localidad = (select l.DW_id_localidad from Dim_Sucursal s inner join Dim_Localidad l on s.Nrolocalidad = l.NroLocalidad where s.NumeroSucursal = ?) and DW_id_linea = (select DW_id_linea from Dim_LineasDePrestamos where NroLinea = ?) and DW_id_cliente = (select DW_id_cliente from Dim_Cliente where NroCliente = ?)
+where DW_id_sucursal = (select DW_id_sucursal from Dim_sucursal where NumeroSucursal=?) and DW_id_linea = (select DW_id_linea from Dim_LineasDePrestamos where NroLinea = ?) and DW_id_cliente = (select DW_id_cliente from Dim_Cliente where NroCliente = ?)
 end</property>
                 <property
                   dataType="System.Int32"
@@ -7302,163 +7302,145 @@ end</property>
                       refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].Columns[id_linea_prestamo]"
                       cachedDataType="i4"
                       cachedName="id_linea_prestamo"
-                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      lineageId="Package\Carga Prestamo_Fact\Merge Join 2.Outputs[Merge Join Output].Columns[id_linea_prestamo]" />
-                    <inputColumn
-                      refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].Columns[suc_alta_1]"
-                      cachedDataType="i4"
-                      cachedName="suc_alta_1"
                       externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\Carga Prestamo_Fact\Derived Column.Outputs[Derived Column Output].Columns[suc_alta_1]" />
+                      lineageId="Package\Carga Prestamo_Fact\Merge Join 2.Outputs[Merge Join Output].Columns[id_linea_prestamo]" />
                     <inputColumn
                       refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].Columns[id_cliente]"
                       cachedDataType="i4"
                       cachedName="id_cliente"
-                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       lineageId="Package\Carga Prestamo_Fact\Merge Join 2.Outputs[Merge Join Output].Columns[id_cliente]" />
                     <inputColumn
-                      refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].Columns[suc_alta_2]"
+                      refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].Columns[suc_alta_1]"
                       cachedDataType="i4"
-                      cachedName="suc_alta_2"
-                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
-                      lineageId="Package\Carga Prestamo_Fact\Derived Column.Outputs[Derived Column Output].Columns[suc_alta_2]" />
-                    <inputColumn
-                      refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].Columns[suc_alta_3]"
-                      cachedDataType="i4"
-                      cachedName="suc_alta_3"
-                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
-                      lineageId="Package\Carga Prestamo_Fact\Derived Column.Outputs[Derived Column Output].Columns[suc_alta_3]" />
+                      cachedName="suc_alta_1"
+                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Carga Prestamo_Fact\Derived Column.Outputs[Derived Column Output].Columns[suc_alta_1]" />
                     <inputColumn
                       refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].Columns[id_linea_prestamo_1]"
                       cachedDataType="i4"
                       cachedName="id_linea_prestamo_1"
-                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
                       lineageId="Package\Carga Prestamo_Fact\Derived Column.Outputs[Derived Column Output].Columns[id_linea_prestamo_1]" />
                     <inputColumn
-                      refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].Columns[fecha_vencimiento_1]"
+                      refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].Columns[fecha_vencimiento]"
                       cachedDataType="dbDate"
-                      cachedName="fecha_vencimiento_1"
-                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
-                      lineageId="Package\Carga Prestamo_Fact\Derived Column.Outputs[Derived Column Output].Columns[fecha_vencimiento_1]" />
+                      cachedName="fecha_vencimiento"
+                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\Carga Prestamo_Fact\Merge Join 2.Outputs[Merge Join Output].Columns[fecha_vencimiento]" />
                     <inputColumn
                       refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].Columns[id_cliente_1]"
                       cachedDataType="i4"
                       cachedName="id_cliente_1"
-                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
                       lineageId="Package\Carga Prestamo_Fact\Derived Column.Outputs[Derived Column Output].Columns[id_cliente_1]" />
                     <inputColumn
                       refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].Columns[MontoAdeudado]"
                       cachedDataType="r8"
                       cachedName="MontoAdeudado"
-                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
                       lineageId="Package\Carga Prestamo_Fact\Merge Join 2.Outputs[Merge Join Output].Columns[MontoAdeudado]" />
                     <inputColumn
                       refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].Columns[cantidad_cuotas]"
                       cachedDataType="i4"
                       cachedName="cantidad_cuotas"
-                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
                       lineageId="Package\Carga Prestamo_Fact\Merge Join 2.Outputs[Merge Join Output].Columns[cantidad_cuotas]" />
                     <inputColumn
                       refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].Columns[monto_total_pagado]"
                       cachedDataType="r8"
                       cachedName="monto_total_pagado"
-                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
                       lineageId="Package\Carga Prestamo_Fact\Merge Join 2.Outputs[Merge Join Output].Columns[monto_total_pagado]" />
                     <inputColumn
                       refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].Columns[interes_moratorio]"
                       cachedDataType="r8"
                       cachedName="interes_moratorio"
-                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
+                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
                       lineageId="Package\Carga Prestamo_Fact\Merge Join 2.Outputs[Merge Join Output].Columns[interes_moratorio]" />
                     <inputColumn
                       refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].Columns[interes_punitorio]"
                       cachedDataType="r8"
                       cachedName="interes_punitorio"
-                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
+                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
                       lineageId="Package\Carga Prestamo_Fact\Merge Join 2.Outputs[Merge Join Output].Columns[interes_punitorio]" />
                     <inputColumn
                       refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].Columns[interes_compensatorio]"
                       cachedDataType="r8"
                       cachedName="interes_compensatorio"
-                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
+                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
                       lineageId="Package\Carga Prestamo_Fact\Merge Join 2.Outputs[Merge Join Output].Columns[interes_compensatorio]" />
                     <inputColumn
                       refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].Columns[DiasAtraso]"
                       cachedDataType="i4"
                       cachedName="DiasAtraso"
-                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
+                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
                       lineageId="Package\Carga Prestamo_Fact\Merge Join 2.Outputs[Merge Join Output].Columns[DiasAtraso]" />
                     <inputColumn
                       refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].Columns[monto_prestado]"
                       cachedDataType="r8"
                       cachedName="monto_prestado"
-                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_16]"
+                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
                       lineageId="Package\Carga Prestamo_Fact\Merge Join 2.Outputs[Merge Join Output].Columns[monto_prestado]" />
                     <inputColumn
-                      refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].Columns[fecha_vencimiento]"
+                      refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].Columns[fecha_vencimiento_1]"
                       cachedDataType="dbDate"
-                      cachedName="fecha_vencimiento"
-                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_17]"
-                      lineageId="Package\Carga Prestamo_Fact\Merge Join 2.Outputs[Merge Join Output].Columns[fecha_vencimiento]" />
+                      cachedName="fecha_vencimiento_1"
+                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
+                      lineageId="Package\Carga Prestamo_Fact\Derived Column.Outputs[Derived Column Output].Columns[fecha_vencimiento_1]" />
                     <inputColumn
                       refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].Columns[MontoAdeudado1]"
                       cachedDataType="r8"
                       cachedName="MontoAdeudado1"
-                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_18]"
+                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_16]"
                       lineageId="Package\Carga Prestamo_Fact\Derived Column.Outputs[Derived Column Output].Columns[MontoAdeudado1]" />
                     <inputColumn
                       refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].Columns[MontoTotalPagado_1]"
                       cachedDataType="r8"
                       cachedName="MontoTotalPagado_1"
-                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_19]"
+                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_17]"
                       lineageId="Package\Carga Prestamo_Fact\Derived Column.Outputs[Derived Column Output].Columns[MontoTotalPagado_1]" />
                     <inputColumn
                       refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].Columns[InteresMoratorio_1]"
                       cachedDataType="r8"
                       cachedName="InteresMoratorio_1"
-                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_20]"
+                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_18]"
                       lineageId="Package\Carga Prestamo_Fact\Derived Column.Outputs[Derived Column Output].Columns[InteresMoratorio_1]" />
                     <inputColumn
                       refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].Columns[InteresPunitorio_1]"
                       cachedDataType="r8"
                       cachedName="InteresPunitorio_1"
-                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_21]"
+                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_19]"
                       lineageId="Package\Carga Prestamo_Fact\Derived Column.Outputs[Derived Column Output].Columns[InteresPunitorio_1]" />
                     <inputColumn
                       refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].Columns[InteresCompensatorio_1]"
                       cachedDataType="r8"
                       cachedName="InteresCompensatorio_1"
-                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_22]"
+                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_20]"
                       lineageId="Package\Carga Prestamo_Fact\Derived Column.Outputs[Derived Column Output].Columns[InteresCompensatorio_1]" />
                     <inputColumn
                       refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].Columns[DiasAtraso1]"
                       cachedDataType="i4"
                       cachedName="DiasAtraso"
-                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_23]"
+                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_21]"
                       lineageId="Package\Carga Prestamo_Fact\Derived Column.Outputs[Derived Column Output].Columns[DiasAtraso]" />
                     <inputColumn
-                      refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].Columns[suc_alta_4]"
+                      refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].Columns[suc_alta_2]"
                       cachedDataType="i4"
-                      cachedName="suc_alta_4"
-                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_24]"
-                      lineageId="Package\Carga Prestamo_Fact\Derived Column.Outputs[Derived Column Output].Columns[suc_alta_4]" />
-                    <inputColumn
-                      refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].Columns[suc_alta_5]"
-                      cachedDataType="i4"
-                      cachedName="suc_alta_5"
-                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_25]"
-                      lineageId="Package\Carga Prestamo_Fact\Derived Column.Outputs[Derived Column Output].Columns[suc_alta_5]" />
+                      cachedName="suc_alta_2"
+                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_22]"
+                      lineageId="Package\Carga Prestamo_Fact\Derived Column.Outputs[Derived Column Output].Columns[suc_alta_2]" />
                     <inputColumn
                       refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].Columns[id_linea_prestamo_2]"
                       cachedDataType="i4"
                       cachedName="id_linea_prestamo_2"
-                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_26]"
+                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_23]"
                       lineageId="Package\Carga Prestamo_Fact\Derived Column.Outputs[Derived Column Output].Columns[id_linea_prestamo_2]" />
                     <inputColumn
                       refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].Columns[id_cliente_2]"
                       cachedDataType="i4"
                       cachedName="id_cliente_2"
-                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_27]"
+                      externalMetadataColumnId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_24]"
                       lineageId="Package\Carga Prestamo_Fact\Derived Column.Outputs[Derived Column Output].Columns[id_cliente_2]" />
                   </inputColumns>
                   <externalMetadataColumns
@@ -7520,7 +7502,7 @@ end</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
-                      dataType="i4"
+                      dataType="dbTimeStamp"
                       name="Param_5">
                       <properties>
                         <property
@@ -7542,7 +7524,7 @@ end</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
-                      dataType="dbTimeStamp"
+                      dataType="r8"
                       name="Param_7">
                       <properties>
                         <property
@@ -7575,7 +7557,7 @@ end</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
-                      dataType="i4"
+                      dataType="r8"
                       name="Param_10">
                       <properties>
                         <property
@@ -7608,7 +7590,7 @@ end</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
-                      dataType="r8"
+                      dataType="i4"
                       name="Param_13">
                       <properties>
                         <property
@@ -7630,7 +7612,7 @@ end</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
-                      dataType="i4"
+                      dataType="dbTimeStamp"
                       name="Param_15">
                       <properties>
                         <property
@@ -7652,7 +7634,7 @@ end</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_17]"
-                      dataType="dbTimeStamp"
+                      dataType="r8"
                       name="Param_17">
                       <properties>
                         <property
@@ -7696,7 +7678,7 @@ end</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_21]"
-                      dataType="r8"
+                      dataType="i4"
                       name="Param_21">
                       <properties>
                         <property
@@ -7707,7 +7689,7 @@ end</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_22]"
-                      dataType="r8"
+                      dataType="i4"
                       name="Param_22">
                       <properties>
                         <property
@@ -7736,39 +7718,6 @@ end</property>
                           dataType="System.Int32"
                           description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
                           name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_25]"
-                      dataType="i4"
-                      name="Param_25">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_26]"
-                      dataType="i4"
-                      name="Param_26">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_27]"
-                      dataType="i4"
-                      name="Param_27">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
                       </properties>
                     </externalMetadataColumn>
                   </externalMetadataColumns>
@@ -11645,34 +11594,34 @@ end</property>
               startId="Package\Carga Prestamo_Fact\Conditional Split.Outputs[No Vencido No pago]" />
             <path
               refId="Package\Carga Prestamo_Fact.Paths[Derived Column Output5]"
-              endId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input]"
+              endId="Package\Carga Prestamo_Fact\Multicast.Inputs[Multicast Input 1]"
               name="Derived Column Output"
-              startId="Package\Carga Prestamo_Fact\Derived Column.Outputs[Derived Column Output]" />
+              startId="Package\Carga Prestamo_Fact\Dias de Atraso.Outputs[Derived Column Output]" />
             <path
               refId="Package\Carga Prestamo_Fact.Paths[Derived Column Output4]"
-              endId="Package\Carga Prestamo_Fact\Aggregate 2.Inputs[Aggregate Input 1]"
-              name="Derived Column Output"
-              startId="Package\Carga Prestamo_Fact\Derived Column 2 1.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Carga Prestamo_Fact.Paths[Derived Column Output3]"
-              endId="Package\Carga Prestamo_Fact\Dias de Atraso.Inputs[Derived Column Input]"
-              name="Derived Column Output"
-              startId="Package\Carga Prestamo_Fact\Esta Vencido.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Carga Prestamo_Fact.Paths[Derived Column Output1]"
-              endId="Package\Carga Prestamo_Fact\Sort 9.Inputs[Sort Input]"
-              name="Derived Column Output"
-              startId="Package\Carga Prestamo_Fact\Derived Column 1.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Carga Prestamo_Fact.Paths[Derived Column Output]"
               endId="Package\Carga Prestamo_Fact\Sort 8.Inputs[Sort Input]"
               name="Derived Column Output"
               startId="Package\Carga Prestamo_Fact\Derived Column 2.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Carga Prestamo_Fact.Paths[Derived Column Output2]"
-              endId="Package\Carga Prestamo_Fact\Multicast.Inputs[Multicast Input 1]"
+              refId="Package\Carga Prestamo_Fact.Paths[Derived Column Output3]"
+              endId="Package\Carga Prestamo_Fact\Sort 9.Inputs[Sort Input]"
               name="Derived Column Output"
-              startId="Package\Carga Prestamo_Fact\Dias de Atraso.Outputs[Derived Column Output]" />
+              startId="Package\Carga Prestamo_Fact\Derived Column 1.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Carga Prestamo_Fact.Paths[Derived Column Output1]"
+              endId="Package\Carga Prestamo_Fact\Aggregate 2.Inputs[Aggregate Input 1]"
+              name="Derived Column Output"
+              startId="Package\Carga Prestamo_Fact\Derived Column 2 1.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Carga Prestamo_Fact.Paths[Derived Column Output]"
+              endId="Package\Carga Prestamo_Fact\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Derived Column Output"
+              startId="Package\Carga Prestamo_Fact\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Carga Prestamo_Fact.Paths[Derived Column Output2]"
+              endId="Package\Carga Prestamo_Fact\Dias de Atraso.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\Carga Prestamo_Fact\Esta Vencido.Outputs[Derived Column Output]" />
             <path
               refId="Package\Carga Prestamo_Fact.Paths[EstaPago]"
               endId="Package\Carga Prestamo_Fact\Aggregate 1.Inputs[Aggregate Input 1]"
@@ -11695,24 +11644,24 @@ end</property>
               startId="Package\Carga Prestamo_Fact\Flat File Source 1.Outputs[Flat File Source Output]" />
             <path
               refId="Package\Carga Prestamo_Fact.Paths[Merge Join Output3]"
-              endId="Package\Carga Prestamo_Fact\Derived Column.Inputs[Derived Column Input]"
+              endId="Package\Carga Prestamo_Fact\Derived Column 2.Inputs[Derived Column Input]"
               name="Merge Join Output"
-              startId="Package\Carga Prestamo_Fact\Merge Join 2.Outputs[Merge Join Output]" />
+              startId="Package\Carga Prestamo_Fact\Merge Join 1.Outputs[Merge Join Output]" />
             <path
               refId="Package\Carga Prestamo_Fact.Paths[Merge Join Output2]"
-              endId="Package\Carga Prestamo_Fact\Sort 10.Inputs[Sort Input]"
-              name="Merge Join Output"
-              startId="Package\Carga Prestamo_Fact\Merge Join 3.Outputs[Merge Join Output]" />
-            <path
-              refId="Package\Carga Prestamo_Fact.Paths[Merge Join Output1]"
               endId="Package\Carga Prestamo_Fact\Esta Vencido.Inputs[Derived Column Input]"
               name="Merge Join Output"
               startId="Package\Carga Prestamo_Fact\Merge Join.Outputs[Merge Join Output]" />
             <path
-              refId="Package\Carga Prestamo_Fact.Paths[Merge Join Output]"
-              endId="Package\Carga Prestamo_Fact\Derived Column 2.Inputs[Derived Column Input]"
+              refId="Package\Carga Prestamo_Fact.Paths[Merge Join Output1]"
+              endId="Package\Carga Prestamo_Fact\Sort 10.Inputs[Sort Input]"
               name="Merge Join Output"
-              startId="Package\Carga Prestamo_Fact\Merge Join 1.Outputs[Merge Join Output]" />
+              startId="Package\Carga Prestamo_Fact\Merge Join 3.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Carga Prestamo_Fact.Paths[Merge Join Output]"
+              endId="Package\Carga Prestamo_Fact\Derived Column.Inputs[Derived Column Input]"
+              name="Merge Join Output"
+              startId="Package\Carga Prestamo_Fact\Merge Join 2.Outputs[Merge Join Output]" />
             <path
               refId="Package\Carga Prestamo_Fact.Paths[Merge Output 1]"
               endId="Package\Carga Prestamo_Fact\Derived Column 2 1.Inputs[Derived Column Input]"
@@ -15325,24 +15274,26 @@ where [refTable].[NroCliente] = ?</property>
           TopLeft="424,731" />
         <EdgeLayout
           Id="Package\Carga Prestamo_Fact.Paths[Derived Column Output]"
-          TopLeft="413,1039">
+          TopLeft="532.5,1485">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,69"
+              EndConnector="0,59"
               Start="0,0"
-              End="0,61.5">
+              End="0,51.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,61.5" />
+                    End="0,51.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-8,17.75,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15921,18 +15872,18 @@ where [refTable].[NroCliente] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Carga Prestamo_Fact.Paths[Merge Join Output3]"
-          TopLeft="531.25,1401">
+          TopLeft="411.5,958">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42"
+              EndConnector="0,39"
               Start="0,0"
-              End="0,34.5">
+              End="0,31.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.5" />
+                    End="0,31.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -15943,28 +15894,6 @@ where [refTable].[NroCliente] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Carga Prestamo_Fact.Paths[Merge Join Output2]"
-          TopLeft="657.5,1041">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,76"
-              Start="0,0"
-              End="0,68.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,68.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Carga Prestamo_Fact.Paths[Merge Join Output1]"
           TopLeft="584.75,251">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -15986,19 +15915,41 @@ where [refTable].[NroCliente] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Carga Prestamo_Fact.Paths[Merge Join Output]"
-          TopLeft="411.5,958">
+          Id="Package\Carga Prestamo_Fact.Paths[Merge Join Output1]"
+          TopLeft="657.5,1041">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39"
+              EndConnector="0,76"
               Start="0,0"
-              End="0,31.5">
+              End="0,68.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.5" />
+                    End="0,68.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga Prestamo_Fact.Paths[Merge Join Output]"
+          TopLeft="531.25,1401">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -16137,74 +16088,6 @@ where [refTable].[NroCliente] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Carga Prestamo_Fact.Paths[Derived Column Output5]"
-          TopLeft="532.5,1485">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59"
-              Start="0,0"
-              End="0,51.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,51.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-8,17.75,16,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Carga Prestamo_Fact.Paths[Derived Column Output4]"
-          TopLeft="97,1233">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,38"
-              Start="0,0"
-              End="0,30.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Carga Prestamo_Fact.Paths[Derived Column Output3]"
-          TopLeft="581.5,330">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,45"
-              Start="0,0"
-              End="0,37.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Carga Prestamo_Fact.Paths[Derived Column Output2]"
           TopLeft="578.5,417">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -16238,7 +16121,29 @@ where [refTable].[NroCliente] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Carga Prestamo_Fact.Paths[Derived Column Output1]"
+          Id="Package\Carga Prestamo_Fact.Paths[Derived Column Output4]"
+          TopLeft="413,1039">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,69"
+              Start="0,0"
+              End="0,61.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga Prestamo_Fact.Paths[Derived Column Output3]"
           TopLeft="905.5,875">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -16263,6 +16168,50 @@ where [refTable].[NroCliente] = ?</property>
                     Point3="-11,27" />
                   <mssgle:LineSegment
                     End="-11,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga Prestamo_Fact.Paths[Derived Column Output2]"
+          TopLeft="581.5,330">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga Prestamo_Fact.Paths[Derived Column Output1]"
+          TopLeft="97,1233">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38"
+              Start="0,0"
+              End="0,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
