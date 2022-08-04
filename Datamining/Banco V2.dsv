@@ -1,0 +1,107 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="e7d76010-b813-4f54-b221-1f1f58667e0b" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Banco V2</ID>
+  <Name>Banco V2</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>Banco V2</DataSourceID>
+  <Schema>
+    <xs:schema id="Banco_x0020_V2" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="Banco_x0020_V2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="5ad8953e-557e-43c9-b8f7-48dcbb82fe51">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_DataMiningView" msprop:design-time-name="99c831d9-2ad9-4264-8770-5e2faf164209" msprop:DbTableName="DataMiningView" msprop:FriendlyName="DataMiningView" msprop:DbSchemaName="dbo" msprop:TableType="View">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="DW_id_cliente" msprop:design-time-name="d8c87fe8-8616-414f-bb63-3241d7e97ffd" msprop:DbColumnName="DW_id_cliente" msprop:FriendlyName="DW_id_cliente" type="xs:int" />
+                  <xs:element name="Actividad" msprop:design-time-name="274d523d-f580-4c26-b60d-3b5e3971c631" msprop:DbColumnName="Actividad" msprop:FriendlyName="Actividad" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="SectorEconomico" msprop:design-time-name="db1abebd-af28-40a6-b7e2-e4e7d355f814" msprop:DbColumnName="SectorEconomico" msprop:FriendlyName="SectorEconomico" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Segmento" msprop:design-time-name="f09f1ad1-5277-4ef4-8e88-bc8d62716481" msprop:DbColumnName="Segmento" msprop:FriendlyName="Segmento" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Sexo" msprop:design-time-name="a17dbc2d-0ae2-4993-aeda-55e374e0171c" msprop:DbColumnName="Sexo" msprop:FriendlyName="Sexo" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="SituacionMoraSF" msprop:design-time-name="333919da-0bf6-4823-b1aa-28cf3ae57fff" msprop:DbColumnName="SituacionMoraSF" msprop:FriendlyName="SituacionMoraSF">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="40" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="SituacionMoraBanco" msprop:design-time-name="eb5ad1fc-78a1-4368-b7d8-4a073b26a153" msprop:DbColumnName="SituacionMoraBanco" msprop:FriendlyName="SituacionMoraBanco">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="40" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Edad" msdata:ReadOnly="true" msprop:design-time-name="0389538d-d250-4088-94cc-e84c9775b18c" msprop:DbColumnName="Edad" msprop:FriendlyName="Edad" type="xs:int" minOccurs="0" />
+                  <xs:element name="DiasAtraso" msprop:design-time-name="e6c1fa7a-728b-4941-9870-33435f00f431" msprop:DbColumnName="DiasAtraso" msprop:FriendlyName="DiasAtraso" type="xs:int" minOccurs="0" />
+                  <xs:element name="montoPrestado" msdata:ReadOnly="true" msprop:design-time-name="8a6c5e07-5413-459c-a46d-58dc7acfdfbb" msprop:DbColumnName="montoPrestado" msprop:FriendlyName="montoPrestado" type="xs:int" />
+                  <xs:element name="MontoAdeudado" msdata:ReadOnly="true" msprop:design-time-name="7e4b6b23-8bd5-4c2e-be99-6b421f4906ce" msprop:DbColumnName="MontoAdeudado" msprop:FriendlyName="MontoAdeudado" type="xs:double" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <Banco_x0020_V2 xmlns="" />
+  </Schema>
+</DataSourceView>

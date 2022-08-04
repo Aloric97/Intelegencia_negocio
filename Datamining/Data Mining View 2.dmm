@@ -1,0 +1,296 @@
+﻿<MiningStructure xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="14625d2c-06f1-432c-946f-61d110d03a6b" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Data Mining View 2</ID>
+  <Name>Data Mining View 2</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CaseTableName</Name>
+      <Value>dbo_DataMiningView</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="5ffb5c84-b2a5-40c1-a879-c5d9dc03dc8c">
+    <DataSourceViewID>Banco V2</DataSourceViewID>
+  </Source>
+  <Columns>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="3dcc86d6-a386-45c0-b8b5-c0c969d93baa">
+      <ID>Actividad</ID>
+      <Name>Actividad</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="91bdb4f7-decf-4895-8e93-515a6dc2a128">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f6077271-bcfb-4b83-9791-3efa1d610e4f">
+            <TableID>dbo_DataMiningView</TableID>
+            <ColumnID>Actividad</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="9dd13f80-0454-4c36-939e-dcdb936ec137">
+      <ID>Dias Atraso</ID>
+      <Name>Dias Atraso</Name>
+      <Type>Long</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a1a29194-e41a-49d1-ab39-d695a5b5b014">
+          <DataType>Integer</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8d90ab02-2f84-4132-8d9a-7666f6ad2494">
+            <TableID>dbo_DataMiningView</TableID>
+            <ColumnID>DiasAtraso</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="001977ec-f2d6-417d-9bb8-c7fd7affe84e">
+      <ID>DW Id Cliente</ID>
+      <Name>DW Id Cliente</Name>
+      <IsKey>true</IsKey>
+      <Type>Long</Type>
+      <Content>Key</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="cec8a0ac-41d8-47c1-8709-a54a4864251a">
+          <DataType>Integer</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0fd9b601-0789-444b-93cb-6008bd74e39b">
+            <TableID>dbo_DataMiningView</TableID>
+            <ColumnID>DW_id_cliente</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="11089bad-5ceb-4f07-b4e6-acbb855d2cbb">
+      <ID>Edad</ID>
+      <Name>Edad</Name>
+      <Type>Long</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="cfea8b8e-de28-4807-9dd0-96312678942a">
+          <DataType>Integer</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8ec1cc32-ffff-4987-925f-8ff7fac82968">
+            <TableID>dbo_DataMiningView</TableID>
+            <ColumnID>Edad</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="8c8c0838-bfe5-4e50-bbec-0ec3c01e2530">
+      <ID>Monto Adeudado</ID>
+      <Name>Monto Adeudado</Name>
+      <Type>Double</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="cecd16f8-ffec-4825-87bd-704fad42e27a">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0cdc9f79-1786-4864-a548-9c3c6635353c">
+            <TableID>dbo_DataMiningView</TableID>
+            <ColumnID>MontoAdeudado</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="71d00cd7-594c-4691-8f3c-a477464000d0">
+      <ID>Monto Prestado</ID>
+      <Name>Monto Prestado</Name>
+      <Type>Long</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="4063b14e-b9f5-497d-8483-48f7585e1ed4">
+          <DataType>Integer</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="fd2e7c1c-b0ce-45a4-b5fb-4e41707de470">
+            <TableID>dbo_DataMiningView</TableID>
+            <ColumnID>montoPrestado</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="48c21041-91f6-49cc-a0d2-e8277f14bdab">
+      <ID>Sector Economico</ID>
+      <Name>Sector Economico</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="31a2da4f-7881-4b3b-b9be-82e5bec05938">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ed16288c-0cfe-43ac-b904-c8312f0cb9c1">
+            <TableID>dbo_DataMiningView</TableID>
+            <ColumnID>SectorEconomico</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="0b13d8e3-6bdb-4b23-b451-98a554529de7">
+      <ID>Segmento</ID>
+      <Name>Segmento</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="4de4ad63-7532-441d-8bb2-774c3d8b8b3c">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3e92097e-6560-45ed-8e49-adfef88c0c89">
+            <TableID>dbo_DataMiningView</TableID>
+            <ColumnID>Segmento</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="c5a4ea60-a310-485e-976a-ee62fb16a9d6">
+      <ID>Sexo</ID>
+      <Name>Sexo</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="8b8e0ad5-9acf-49aa-a983-228ae156f0c4">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4d5cabeb-ecf9-4c28-baef-1a5fd5f040df">
+            <TableID>dbo_DataMiningView</TableID>
+            <ColumnID>Sexo</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="116cb580-3b70-4987-905a-8af841d3acd1">
+      <ID>Situacion Mora Banco</ID>
+      <Name>Situacion Mora Banco</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="2bd8fb5a-09e0-47e1-89bc-aa4df2bb05a7">
+          <DataType>WChar</DataType>
+          <DataSize>40</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2366bea0-0e99-4f12-8fe8-3986f7e5f2cd">
+            <TableID>dbo_DataMiningView</TableID>
+            <ColumnID>SituacionMoraBanco</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="a8594d8c-268a-455b-bf63-88e3869c0b65">
+      <ID>Situacion Mora SF</ID>
+      <Name>Situacion Mora SF</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ac4efba9-60be-4837-abe9-d97e8d4909f8">
+          <DataType>WChar</DataType>
+          <DataSize>40</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5f321d6d-afd3-4ccf-8623-41e982c03ef3">
+            <TableID>dbo_DataMiningView</TableID>
+            <ColumnID>SituacionMoraSF</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+  </Columns>
+  <MiningModels>
+    <MiningModel dwd:design-time-name="e56066d8-c4a2-497d-aa8c-3cbe55fe3f22">
+      <ID>Data Mining View 2</ID>
+      <Name>Data Mining View 2</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Algorithm>Microsoft_Clustering</Algorithm>
+      <Columns>
+        <Column dwd:design-time-name="481c2c3c-ba99-4860-b508-1b214917231a">
+          <ID>Actividad</ID>
+          <Name>Actividad</Name>
+          <SourceColumnID>Actividad</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="c40a376b-ffb5-46d9-b7b3-c25ba9f4cbd9">
+          <ID>Dias Atraso</ID>
+          <Name>Dias Atraso</Name>
+          <SourceColumnID>Dias Atraso</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="9ff86fbc-e081-4e1a-893a-948c7b6cf341">
+          <ID>DW Id Cliente</ID>
+          <Name>DW Id Cliente</Name>
+          <SourceColumnID>DW Id Cliente</SourceColumnID>
+          <Usage>Key</Usage>
+        </Column>
+        <Column dwd:design-time-name="aa12a3ca-706b-4efa-a9ce-1d0a01996ff0">
+          <ID>Edad</ID>
+          <Name>Edad</Name>
+          <SourceColumnID>Edad</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="3d118f01-75e6-4194-9ec1-8e3d77484462">
+          <ID>Monto Adeudado</ID>
+          <Name>Monto Adeudado</Name>
+          <SourceColumnID>Monto Adeudado</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="a67c7e54-bd57-406d-b386-29f3eb0d9786">
+          <ID>Sector Economico</ID>
+          <Name>Sector Economico</Name>
+          <SourceColumnID>Sector Economico</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="8c80def5-0a66-4f42-b410-ebe446b83df5">
+          <ID>Segmento</ID>
+          <Name>Segmento</Name>
+          <SourceColumnID>Segmento</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="ef54a014-1ce2-4a6f-a456-f419e9bec6d2">
+          <ID>Sexo</ID>
+          <Name>Sexo</Name>
+          <SourceColumnID>Sexo</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="cff70091-2074-45ee-841c-57411aa74444">
+          <ID>Situacion Mora Banco</ID>
+          <Name>Situacion Mora Banco</Name>
+          <SourceColumnID>Situacion Mora Banco</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="73d40ab3-59f2-4d5f-a14a-cff61ec5ee39">
+          <ID>Situacion Mora SF</ID>
+          <Name>Situacion Mora SF</Name>
+          <SourceColumnID>Situacion Mora SF</SourceColumnID>
+        </Column>
+      </Columns>
+    </MiningModel>
+  </MiningModels>
+  <ddl100_100:HoldoutMaxPercent>30</ddl100_100:HoldoutMaxPercent>
+</MiningStructure>

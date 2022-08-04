@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:ObjectName="Prestamos"
   DTS:DTSID="{5B254263-9D37-456A-A9BA-C8C04323F6A7}"
@@ -20,7 +20,7 @@
           DTS:DataType="20"
           DTS:TextQualified="True"
           DTS:ObjectName="id_prestamo"
-          DTS:DTSID="{05310EF3-DCD4-447F-B080-D9734E41FDF6}"
+          DTS:DTSID="{07371C3D-8D3F-40FC-BB86-39FCF6E3B01B}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -28,7 +28,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="monto_prestado"
-          DTS:DTSID="{096A3EAF-EFFF-49CC-8630-B4A71F74C965}"
+          DTS:DTSID="{D7346CEA-8032-4D27-8317-FE6E0199AF88}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -36,7 +36,7 @@
           DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="suc_alta"
-          DTS:DTSID="{2C4844B3-CE89-43ED-9A4F-2FEADEFDDDD2}"
+          DTS:DTSID="{44068960-4A55-4E4B-B439-BE10056BCB6E}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -44,7 +44,7 @@
           DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="cantidad_cuotas"
-          DTS:DTSID="{CCB299B3-9B17-44A4-B179-5D2C3C2F5D12}"
+          DTS:DTSID="{968F2DD5-E7AF-4361-84F9-9A2BF38D9628}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -53,7 +53,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="cuenta_cobro"
-          DTS:DTSID="{5929AC82-75B3-4EDA-89ED-533A019F5E76}"
+          DTS:DTSID="{3DFE329E-9877-4B94-8473-79205F80067B}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -61,7 +61,7 @@
           DTS:DataType="133"
           DTS:TextQualified="True"
           DTS:ObjectName="fecha_constitucion"
-          DTS:DTSID="{F16F0398-A01A-4EE6-91D1-799B26B7AA53}"
+          DTS:DTSID="{807B97C2-921C-425B-8DFA-0F28FD3BDCC1}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -69,7 +69,7 @@
           DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="id_cliente"
-          DTS:DTSID="{ECAF4908-981C-4C21-A185-E8279F7073CA}"
+          DTS:DTSID="{8F6E08D6-C77A-4119-AA00-AAC404315189}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -77,7 +77,7 @@
           DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="id_linea_prestamo"
-          DTS:DTSID="{DB275A64-7202-4B0A-8C5B-C6269164C843}"
+          DTS:DTSID="{E314B086-D4D5-4F33-A484-F82D4FAA44A2}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

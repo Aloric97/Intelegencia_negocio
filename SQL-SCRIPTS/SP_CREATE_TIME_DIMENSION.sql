@@ -9,6 +9,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
+
 create procedure [dbo].[sp_create_dim_time] 
 as
 IF (EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND  TABLE_NAME = 'Dim_Tiempo'))
@@ -171,7 +172,10 @@ BEGIN
 		--	END AS MonthOfQuarter,
 		null as TrimestreNro,
 		DATEPART(QQ, @CurrentDate) AS CuatrimestreNro,
-		null as SemestreNro,
+		case
+			when @CurrentMonth > 6 then 2 
+			when @CurrentMonth < 6 then 1 
+		 end as SemestreNro,
 		--CASE DATEPART(QQ, @CurrentDate)
 		--	WHEN 1 THEN 'First'
 		--	WHEN 2 THEN 'Second'
